@@ -69,6 +69,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="book.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +101,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Statics.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Statics.Designer.cs">
       <DependentUpon>Statics.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="book.resx">
       <DependentUpon>book.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +163,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\269-2697881_computer-icons-user-clip-art-transparent-png-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tt7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f886b340577ab9876ec1c1a2e542160f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\155-1551417_level-450-summoner-icon-border-mobile-legends-border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3559237-middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\182-1820448_level-30-summoner-icon-border-lvl-30-summoner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

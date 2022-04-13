@@ -37,18 +37,19 @@ namespace Template
 
         private void btn_Acccount_Click(object sender, EventArgs e)
         {
-            Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
-
+            Account acc = new Account() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Pan_Infor.Controls.Clear();
+            Pan_Infor.Controls.Add(acc);
+            acc.Show();
         }
 
         private void btn_Overview_Click(object sender, EventArgs e)
         {
-            Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
-            guna2ShadowForm1.SetShadowForm(this);
+            Pan_Infor.Controls.Clear();
             Overview a = new Overview() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.Pan_Infor.Controls.Add(a);
+            Pan_Infor.Controls.Add(a);
             a.Show();
         }
 

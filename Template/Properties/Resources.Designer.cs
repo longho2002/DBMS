@@ -73,9 +73,49 @@ namespace Template.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _155_1551417_level_450_summoner_icon_border_mobile_legends_border {
+            get {
+                object obj = ResourceManager.GetObject("155-1551417_level-450-summoner-icon-border-mobile-legends-border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _182_1820448_level_30_summoner_icon_border_lvl_30_summoner {
+            get {
+                object obj = ResourceManager.GetObject("182-1820448_level-30-summoner-icon-border-lvl-30-summoner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _269_2697881_computer_icons_user_clip_art_transparent_png_icon {
             get {
                 object obj = ResourceManager.GetObject("269-2697881_computer-icons-user-clip-art-transparent-png-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3559237_middle {
+            get {
+                object obj = ResourceManager.GetObject("3559237-middle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f886b340577ab9876ec1c1a2e542160f {
+            get {
+                object obj = ResourceManager.GetObject("f886b340577ab9876ec1c1a2e542160f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +136,16 @@ namespace Template.Properties {
         internal static System.Drawing.Bitmap pic_project_winform {
             get {
                 object obj = ResourceManager.GetObject("pic-project-winform", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tt7 {
+            get {
+                object obj = ResourceManager.GetObject("tt7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Template
 {
-    partial class Statics
+    partial class Statistic
     {
         /// <summary>
         /// Required designer variable.

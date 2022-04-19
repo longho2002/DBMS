@@ -11,9 +11,9 @@ using Guna.UI2.WinForms;
 
 namespace Template
 {
-    public partial class Statics : Form
+    public partial class Statistic : Form
     {
-        public Statics()
+        public Statistic()
         {
             InitializeComponent();
         }

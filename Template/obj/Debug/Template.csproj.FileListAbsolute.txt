@@ -25,5 +25,8 @@ C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\bin\Debug\Liv
 C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.Statics.resources
 C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.Account.resources
+C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.Statistic.resources
+C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.UserInfo.resources
+C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.DashBoard.resources
+C:\Users\Thai Long\OneDrive - hcmute.edu.vn\code\Template\Template\obj\Debug\Template.test.resources

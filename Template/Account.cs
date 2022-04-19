@@ -27,7 +27,7 @@ namespace Template
             lb_rank.BackColor = System.Drawing.Color.Transparent;
             lb_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb_rank.ForeColor = System.Drawing.Color.Black;
-            lb_rank.Location = new System.Drawing.Point(524, 28);
+            lb_rank.Location = new System.Drawing.Point(500, 28);
             lb_rank.Name = "lb_rank";
             lb_rank.Size = new System.Drawing.Size(126, 24);
             lb_rank.Text = "Gold member";
@@ -73,8 +73,26 @@ namespace Template
             pan_Acc.Name = "pan_Acc";
             pan_Acc.Size = new System.Drawing.Size(660, 75);
             pan_Acc.TabIndex = 0;
-
+            pan_Acc.Click += Click_show;
             return pan_Acc;
+        }
+
+        private void Click_show(object sender, System.EventArgs e)
+        {
+            UserInfo a = new UserInfo();
+            a.FormBorderStyle = FormBorderStyle.Fixed3D;
+            a.ShowDialog();
+
+        }
+
+        private void pan_Acc_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pan_Acc_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

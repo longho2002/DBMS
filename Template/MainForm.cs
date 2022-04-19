@@ -86,7 +86,17 @@ namespace Template
             Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
             guna2ShadowForm1.SetShadowForm(this);
-            Statics a = new Statics() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Statistic a = new Statistic() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.Pan_Infor.Controls.Add(a);
+            a.Show();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Pan_Infor.Controls.Clear();
+            toggleButton_Click((sender as Guna2Button));
+            guna2ShadowForm1.SetShadowForm(this);
+            DashBoard a = new DashBoard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
         }

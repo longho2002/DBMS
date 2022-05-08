@@ -45,7 +45,8 @@ namespace Template
 
         private void guna2HtmlLabel7_Click(object sender, EventArgs e)
         {
-
+            Register a = new Register();
+            a.ShowDialog();
         }
 
         private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)

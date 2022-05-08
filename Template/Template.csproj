@@ -33,11 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.Charts.WinForms, Version=1.0.3.0, Culture=neutral, PublicKeyToken=4cb9ae78886bbe24, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.Charts.WinForms.1.0.3\lib\net40\Guna.Charts.WinForms.dll</HintPath>
+    <Reference Include="Guna.UI">
+      <HintPath>G:\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -51,10 +52,12 @@
     <Reference Include="MaterialSkin, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.1.3\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,11 +78,47 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Addbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addbook.Designer.cs">
+      <DependentUpon>Addbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\addAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\addAuthor.Designer.cs">
+      <DependentUpon>addAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\EditAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\EditAuthor.Designer.cs">
+      <DependentUpon>EditAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="book.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="book.Designer.cs">
       <DependentUpon>book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bookInfo.Designer.cs">
+      <DependentUpon>bookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookName.Designer.cs">
+      <DependentUpon>BookName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrrowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrrowInfo.Designer.cs">
+      <DependentUpon>BorrrowInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
@@ -87,11 +126,36 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoard_Cus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard_Cus.Designer.cs">
+      <DependentUpon>DashBoard_Cus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="InfoGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoGroup.Designer.cs">
+      <DependentUpon>InfoGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\addLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\addLoc.Designer.cs">
+      <DependentUpon>addLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\editLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\editLoc.Designer.cs">
+      <DependentUpon>editLoc.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -99,14 +163,39 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MY_DB.cs" />
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Overview.Designer.cs">
       <DependentUpon>Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverviewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewUser.Designer.cs">
+      <DependentUpon>OverviewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publish Company\addPublish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publish Company\addPublish.Designer.cs">
+      <DependentUpon>addPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publish Company\editPublish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publish Company\editPublish.Designer.cs">
+      <DependentUpon>editPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="RJCircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -122,6 +211,18 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdatePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePass.Designer.cs">
+      <DependentUpon>UpdatePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRemoveBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRemoveBook.Designer.cs">
+      <DependentUpon>UpdateRemoveBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,20 +232,53 @@
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Addbook.resx">
+      <DependentUpon>Addbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\addAuthor.resx">
+      <DependentUpon>addAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\EditAuthor.resx">
+      <DependentUpon>EditAuthor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="book.resx">
       <DependentUpon>book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookInfo.resx">
+      <DependentUpon>bookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookName.resx">
+      <DependentUpon>BookName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrrowInfo.resx">
+      <DependentUpon>BorrrowInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard_Cus.resx">
+      <DependentUpon>DashBoard_Cus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoGroup.resx">
+      <DependentUpon>InfoGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\addLoc.resx">
+      <DependentUpon>addLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\editLoc.resx">
+      <DependentUpon>editLoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewUser.resx">
+      <DependentUpon>OverviewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,11 +290,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Publish Company\addPublish.resx">
+      <DependentUpon>addPublish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publish Company\editPublish.resx">
+      <DependentUpon>editPublish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Statistic.resx">
       <DependentUpon>Statistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePass.resx">
+      <DependentUpon>UpdatePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRemoveBook.resx">
+      <DependentUpon>UpdateRemoveBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
@@ -206,5 +355,6 @@
   <ItemGroup>
     <None Include="Resources\182-1820448_level-30-summoner-icon-border-lvl-30-summoner.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

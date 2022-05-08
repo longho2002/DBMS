@@ -59,7 +59,6 @@ namespace Template
             // 
             // guna2ShadowForm1
             // 
-            this.guna2ShadowForm1.TargetForm = this;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -77,7 +76,6 @@ namespace Template
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::Template.Properties.Resources.pic_project_winform;
-            this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(8, 7);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(301, 471);
@@ -112,7 +110,6 @@ namespace Template
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = global::Template.Properties.Resources.icon_password_3;
-            this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.Location = new System.Drawing.Point(76, 302);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(30, 32);
@@ -123,7 +120,6 @@ namespace Template
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::Template.Properties.Resources._1081856_200;
-            this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(74, 201);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(30, 32);
@@ -173,11 +169,11 @@ namespace Template
             this.guna2GradientButton1.BorderColor = System.Drawing.Color.BlueViolet;
             this.guna2GradientButton1.BorderRadius = 21;
             this.guna2GradientButton1.BorderThickness = 1;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -288,15 +284,11 @@ namespace Template
             // 
             // guna2DragControl1
             // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.guna2CustomGradientPanel1;
-            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2DragControl2
             // 
-            this.guna2DragControl2.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl2.TargetControl = this.guna2CustomGradientPanel2;
-            this.guna2DragControl2.UseTransparentDrag = true;
             // 
             // Form1
             // 

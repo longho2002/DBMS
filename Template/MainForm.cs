@@ -20,7 +20,16 @@ namespace Template
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            guna2ShadowForm1.SetShadowForm(this);
+            Globals.SetUser("12", "customer", "Cozark");
+            btn_Borrow.Visible = false;
+            lb_name.Text = "Welcome Back (" + Globals.nameUser + ")";
+            if (Globals.role.Equals("customer"))
+            {
+                OverviewUser aa = new OverviewUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Pan_Infor.Controls.Add(aa);
+                aa.Show();
+                return;
+            }
             Overview a = new Overview() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
@@ -38,8 +47,15 @@ namespace Template
         private void btn_Acccount_Click(object sender, EventArgs e)
         {
             toggleButton_Click((sender as Guna2Button));
-            Account acc = new Account() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Clear();
+            if (Globals.role.Equals("customer"))
+            {
+                UserInfo a = new UserInfo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Pan_Infor.Controls.Add(a);
+                a.Show();
+                return;
+            }
+            Account acc = new Account() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Add(acc);
             acc.Show();
         }
@@ -48,6 +64,13 @@ namespace Template
         {
             toggleButton_Click((sender as Guna2Button));
             Pan_Infor.Controls.Clear();
+            if (Globals.role.Equals("customer"))
+            {
+                OverviewUser aa = new OverviewUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Pan_Infor.Controls.Add(aa);
+                aa.Show();
+                return;
+            }
             Overview a = new Overview() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Add(a);
             a.Show();
@@ -95,10 +118,33 @@ namespace Template
         {
             Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
-            guna2ShadowForm1.SetShadowForm(this);
+            if (Globals.role.Equals("customer"))
+            {
+                DashBoard_Cus aa = new DashBoard_Cus() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Pan_Infor.Controls.Add(aa);
+                aa.Show();
+                return;
+            }
             DashBoard a = new DashBoard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
+        }
+
+        private void btn_Borrow_Click(object sender, EventArgs e)
+        {
+            toggleButton_Click((sender as Guna2Button));
+            Pan_Infor.Controls.Clear();
+            Pan_Infor.Controls.Clear();
+            Borrow a = new Borrow() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Pan_Infor.Controls.Add(a);
+            a.Show();
+        }
+
+
+        private void gunaAdvenceTileButton2_Click(object sender, EventArgs e)
+        {
+            InfoGroup a = new InfoGroup();
+            a.ShowDialog(this);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 
@@ -10,79 +11,101 @@ namespace Template
         {
             InitializeComponent();
             panel1.BackColor = Color.DimGray;
-            for (int i = 0; i < 10; i++)
+
+            // pan_Acc.Location = new Point(21, 18);
+            // pan_Acc.Size = new Size(170, 170);
+            int x = 20, y = 20;
+            for (int i = 1; i <= 20; i++)
             {
-                panel1.Controls.Add(renderAcc(20, 20 + 75 * i + 20 * i));
+                panel1.Controls.Add(renderAcc(x + (i % 5) * (16 + 170), y, "1231", "Long", "Master"));
+                if (i % 5 == 0)
+                {
+                    x = 20;
+                    y += 20 + 170;
+                }
             }
         }
 
-        public Guna2CustomGradientPanel renderAcc(int x, int y)
+        public Guna2GradientPanel renderAcc(int x, int y, string idUser, string name, string rank)
         {
-            Guna2CustomGradientPanel pan_Acc = new Guna2CustomGradientPanel();
             // 
             // lb_rank
             // 
             Label lb_rank = new Label();
             lb_rank.AutoSize = true;
-            lb_rank.BackColor = System.Drawing.Color.Transparent;
-            lb_rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lb_rank.ForeColor = System.Drawing.Color.Black;
-            lb_rank.Location = new System.Drawing.Point(500, 28);
-            lb_rank.Name = "lb_rank";
-            lb_rank.Size = new System.Drawing.Size(126, 24);
-            lb_rank.Text = "Gold member";
+            lb_rank.BackColor = Color.Transparent;
+            lb_rank.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic, GraphicsUnit.Point, ((byte)(0)));
+            lb_rank.ForeColor = Color.Black;
+            lb_rank.Location = new Point(10, 100);
+            lb_rank.Size = new Size(170, 23);
+            lb_rank.Text = rank;
+            lb_rank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            lb_rank.AutoSize = false;
+            lb_rank.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lb_Name
             // 
             Label lb_Name = new Label();
             lb_Name.AutoSize = true;
-            lb_Name.BackColor = System.Drawing.Color.Transparent;
-            lb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lb_Name.ForeColor = System.Drawing.Color.OrangeRed;
-            lb_Name.Location = new System.Drawing.Point(90, 28);
-            lb_Name.Name = "lb_Name";
-            lb_Name.Size = new System.Drawing.Size(68, 24);
-            lb_Name.TabIndex = 2;
-            lb_Name.Text = "Cozark";
-            //
+            lb_Name.BackColor = Color.Transparent;
+            lb_Name.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            lb_Name.ForeColor = Color.DodgerBlue;
+            lb_Name.Location = new Point(55, 105);
+            lb_Name.Size = new Size(68, 24);
+            lb_Name.Text = name;
+
+            // 
             // rjCircularPictureBox2
             // 
-            RJCircularPictureBox rjCircularPictureBox2 = new RJCircularPictureBox();
-            rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            rjCircularPictureBox2.BorderSize = 2;
-            rjCircularPictureBox2.GradientAngle = 50F;
-            rjCircularPictureBox2.Image = global::Template.Properties.Resources._1081856_200;
-            rjCircularPictureBox2.Location = new System.Drawing.Point(0, 0);
-            rjCircularPictureBox2.Name = "rjCircularPictureBox2";
-            rjCircularPictureBox2.Size = new System.Drawing.Size(72, 72);
-            rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            rjCircularPictureBox2.TabIndex = 1;
-            rjCircularPictureBox2.TabStop = false;
-            //
+            RJCircularPictureBox pictureBox = new RJCircularPictureBox();
+            pictureBox.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            pictureBox.BorderColor = Color.RoyalBlue;
+            pictureBox.BorderColor2 = Color.HotPink;
+            pictureBox.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            pictureBox.BorderSize = 2;
+            pictureBox.GradientAngle = 50F;
+            pictureBox.Location = new Point(40, 17);
+            pictureBox.Name = "rjCircularPictureBox2";
+            pictureBox.Size = new Size(84, 84);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.TabStop = false;
+
+            // 
             // pan_Acc
             // 
+            Label id = new Label()
+            {
+                Text = idUser,
+                Visible = false,
+            };
+            Guna2GradientPanel pan_Acc = new Guna2GradientPanel();
+            pan_Acc.BorderRadius = 20;
+            pan_Acc.Controls.Add(id);
             pan_Acc.Controls.Add(lb_rank);
             pan_Acc.Controls.Add(lb_Name);
-            pan_Acc.Controls.Add(rjCircularPictureBox2);
-            pan_Acc.FillColor = System.Drawing.Color.FromArgb(43, 88, 118);
-            pan_Acc.FillColor2 = System.Drawing.Color.FromArgb(78, 67, 118);
-            pan_Acc.Location = new System.Drawing.Point(x, y);
-            pan_Acc.Name = "pan_Acc";
-            pan_Acc.Size = new System.Drawing.Size(660, 75);
-            pan_Acc.TabIndex = 0;
+            pan_Acc.Controls.Add(pictureBox);
+            pan_Acc.FillColor = Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(200)))), ((int)(((byte)(48)))));
+            pan_Acc.FillColor2 = Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(115)))), ((int)(((byte)(53)))));
+            pan_Acc.Location = new Point(x, y);
+            pan_Acc.Size = new Size(170, 170);
             pan_Acc.Click += Click_show;
-            return pan_Acc;
+            //pan_Acc.MouseHover += (sender, args) =>
+            //{
+            //    (sender as Guna2GradientPanel).Size = new System.Drawing.Size(180, 180); // Desired hovered size
+            //};
+            //pan_Acc.MouseLeave += (sender, args) =>
+            //{
+            //    (sender as Guna2GradientPanel).Size = new Size(170, 170); // Back to original size
+            //};
+            return pan_Acc ;
         }
 
         private void Click_show(object sender, System.EventArgs e)
         {
             UserInfo a = new UserInfo();
             a.FormBorderStyle = FormBorderStyle.Fixed3D;
+            Globals.setIDUser((sender as Guna2GradientPanel).Controls[0].Text);
             a.ShowDialog();
-
         }
 
         private void pan_Acc_Paint(object sender, PaintEventArgs e)
@@ -93,6 +116,14 @@ namespace Template
         private void pan_Acc_Click(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
         }
     }
 }

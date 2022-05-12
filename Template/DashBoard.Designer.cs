@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             this.Guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -68,32 +68,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Guna2TextBox1
+            // tb_search
             // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 20;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.FocusedState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.HoverState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Location = new System.Drawing.Point(44, 3);
-            this.Guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "Search..............";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.ShadowDecoration.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Size = new System.Drawing.Size(447, 44);
-            this.Guna2TextBox1.TabIndex = 117;
+            this.tb_search.Animated = true;
+            this.tb_search.BorderRadius = 20;
+            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_search.DefaultText = "";
+            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.DisabledState.Parent = this.tb_search;
+            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.FocusedState.Parent = this.tb_search;
+            this.tb_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.HoverState.Parent = this.tb_search;
+            this.tb_search.Location = new System.Drawing.Point(44, 3);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.PasswordChar = '\0';
+            this.tb_search.PlaceholderText = "Search..............";
+            this.tb_search.SelectedText = "";
+            this.tb_search.ShadowDecoration.Parent = this.tb_search;
+            this.tb_search.Size = new System.Drawing.Size(447, 44);
+            this.tb_search.TabIndex = 117;
             // 
             // Guna2Button13
             // 
@@ -527,7 +527,7 @@
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.Guna2Button13);
-            this.Controls.Add(this.Guna2TextBox1);
+            this.Controls.Add(this.tb_search);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashBoard";
             this.Text = "DashBoard";
@@ -547,7 +547,7 @@
         }
 
         #endregion
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
+        internal Guna.UI2.WinForms.Guna2TextBox tb_search;
         internal Guna.UI2.WinForms.Guna2Button Guna2Button13;
         internal Guna.UI2.WinForms.Guna2Button guna2Button1;
         internal Guna.UI2.WinForms.Guna2Button guna2Button2;

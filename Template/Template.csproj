@@ -36,6 +36,9 @@
     <Reference Include="Guna.UI">
       <HintPath>G:\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b">
+      <HintPath>G:\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
@@ -178,6 +181,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Publish Company\addPublish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,14 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Publish Company\addPublish.resx">
       <DependentUpon>addPublish.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,18 +345,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tt7.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\f886b340577ab9876ec1c1a2e542160f.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\155-1551417_level-450-summoner-icon-border-mobile-legends-border.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3559237-middle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\182-1820448_level-30-summoner-icon-border-lvl-30-summoner.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

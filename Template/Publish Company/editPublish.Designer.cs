@@ -75,6 +75,7 @@
             this.btn_can.TabIndex = 200;
             this.btn_can.Text = "Xóa";
             this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
             // 
             // btn_add
             // 
@@ -84,6 +85,7 @@
             this.btn_add.TabIndex = 199;
             this.btn_add.Text = "Cập nhật";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // tb_address
             // 
@@ -101,7 +103,7 @@
             this.tb_name.Size = new System.Drawing.Size(257, 29);
             this.tb_name.TabIndex = 201;
             // 
-            // editPublish
+            // EditPublish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,6 +118,7 @@
             this.Name = "EditPublish";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editPublish";
+            this.Load += new System.EventHandler(this.EditPublish_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

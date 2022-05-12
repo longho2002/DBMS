@@ -45,6 +45,7 @@
             this.btn_can.TabIndex = 190;
             this.btn_can.Text = "Hủy";
             this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
             // 
             // btn_add
             // 
@@ -54,6 +55,7 @@
             this.btn_add.TabIndex = 189;
             this.btn_add.Text = "Thêm";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // tb_address
             // 
@@ -101,11 +103,11 @@
             this.label10.TabIndex = 191;
             this.label10.Text = "Thông tin NXB";
             // 
-            // addPublish
+            // AddPublish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 264);
+            this.ClientSize = new System.Drawing.Size(516, 245);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_can);
             this.Controls.Add(this.btn_add);
@@ -124,9 +126,9 @@
         #endregion
 
         private System.Windows.Forms.Button btn_can;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.TextBox tb_address;
-        private System.Windows.Forms.TextBox tb_name;
+        public System.Windows.Forms.Button btn_add;
+        public System.Windows.Forms.TextBox tb_address;
+        public System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;

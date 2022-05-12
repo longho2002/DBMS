@@ -124,25 +124,25 @@
   <data name="icon-password-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-password-3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3559237-middle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="3559237-middle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3559237-middle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="1081856-200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1081856-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pic-project-winform" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pic-project-winform.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="f886b340577ab9876ec1c1a2e542160f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="f886b340577ab9876ec1c1a2e542160f" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f886b340577ab9876ec1c1a2e542160f.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="269-2697881_computer-icons-user-clip-art-transparent-png-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\269-2697881_computer-icons-user-clip-art-transparent-png-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="155-1551417_level-450-summoner-icon-border-mobile-legends-border" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="155-1551417_level-450-summoner-icon-border-mobile-legends-border" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\155-1551417_level-450-summoner-icon-border-mobile-legends-border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="182-1820448_level-30-summoner-icon-border-lvl-30-summoner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\182-1820448_level-30-summoner-icon-border-lvl-30-summoner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
 </root>

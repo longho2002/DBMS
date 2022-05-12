@@ -43,6 +43,7 @@
             this.btn_can.TabIndex = 193;
             this.btn_can.Text = "Xóa";
             this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
             // 
             // btn_add
             // 
@@ -52,6 +53,7 @@
             this.btn_add.TabIndex = 192;
             this.btn_add.Text = "Cập nhật";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // tb_loc
             // 
@@ -81,7 +83,7 @@
             this.label10.TabIndex = 194;
             this.label10.Text = "Vị trí";
             // 
-            // editLoc
+            // EditLoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

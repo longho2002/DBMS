@@ -33,21 +33,19 @@
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.tb_Phone = new System.Windows.Forms.TextBox();
             this.tb_Address = new System.Windows.Forms.TextBox();
-            this.tb_LName = new System.Windows.Forms.TextBox();
-            this.tb_FName = new System.Windows.Forms.TextBox();
+            this.tb_Name = new System.Windows.Forms.TextBox();
             this.tb_ID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
-            this.btn_UploadImg = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,24 +98,16 @@
             this.tb_Address.Location = new System.Drawing.Point(558, 265);
             this.tb_Address.Multiline = true;
             this.tb_Address.Name = "tb_Address";
-            this.tb_Address.Size = new System.Drawing.Size(220, 154);
+            this.tb_Address.Size = new System.Drawing.Size(220, 120);
             this.tb_Address.TabIndex = 76;
             // 
-            // tb_LName
+            // tb_Name
             // 
-            this.tb_LName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_LName.Location = new System.Drawing.Point(558, 136);
-            this.tb_LName.Name = "tb_LName";
-            this.tb_LName.Size = new System.Drawing.Size(220, 26);
-            this.tb_LName.TabIndex = 75;
-            // 
-            // tb_FName
-            // 
-            this.tb_FName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_FName.Location = new System.Drawing.Point(558, 105);
-            this.tb_FName.Name = "tb_FName";
-            this.tb_FName.Size = new System.Drawing.Size(220, 26);
-            this.tb_FName.TabIndex = 74;
+            this.tb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Name.Location = new System.Drawing.Point(558, 136);
+            this.tb_Name.Name = "tb_Name";
+            this.tb_Name.Size = new System.Drawing.Size(220, 26);
+            this.tb_Name.TabIndex = 75;
             // 
             // tb_ID
             // 
@@ -179,22 +169,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Brown;
-            this.label3.Location = new System.Drawing.Point(425, 143);
+            this.label3.Location = new System.Drawing.Point(460, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 68;
-            this.label3.Text = "Last Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Brown;
-            this.label2.Location = new System.Drawing.Point(425, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "First Name:";
+            this.label3.Text = "Name:";
             // 
             // label1
             // 
@@ -216,24 +195,13 @@
             this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.rjCircularPictureBox1.BorderSize = 2;
             this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(101, 105);
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(101, 143);
             this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(263, 263);
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(209, 209);
             this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rjCircularPictureBox1.TabIndex = 81;
             this.rjCircularPictureBox1.TabStop = false;
-            // 
-            // btn_UploadImg
-            // 
-            this.btn_UploadImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UploadImg.Location = new System.Drawing.Point(181, 377);
-            this.btn_UploadImg.Name = "btn_UploadImg";
-            this.btn_UploadImg.Size = new System.Drawing.Size(115, 42);
-            this.btn_UploadImg.TabIndex = 82;
-            this.btn_UploadImg.Text = "Upload";
-            this.btn_UploadImg.UseVisualStyleBackColor = true;
-            this.btn_UploadImg.Click += new System.EventHandler(this.btn_UploadImg_Click);
             // 
             // btn_Edit
             // 
@@ -245,6 +213,7 @@
             this.btn_Edit.TabIndex = 84;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Remove
             // 
@@ -256,6 +225,7 @@
             this.btn_Remove.TabIndex = 83;
             this.btn_Remove.Text = "Remove";
             this.btn_Remove.UseVisualStyleBackColor = false;
+            this.btn_Remove.Click += new System.EventHandler(this.btn_Remove_Click);
             // 
             // label8
             // 
@@ -267,30 +237,51 @@
             this.label8.TabIndex = 85;
             this.label8.Text = "Chỉnh sửa thông tin khách hàng";
             // 
+            // btn_update
+            // 
+            this.btn_update.Animated = true;
+            this.btn_update.BackColor = System.Drawing.Color.Transparent;
+            this.btn_update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btn_update.BorderRadius = 10;
+            this.btn_update.BorderThickness = 1;
+            this.btn_update.CheckedState.Parent = this.btn_update;
+            this.btn_update.CustomImages.Parent = this.btn_update;
+            this.btn_update.FillColor = System.Drawing.Color.White;
+            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btn_update.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btn_update.HoverState.Parent = this.btn_update;
+            this.btn_update.Location = new System.Drawing.Point(601, 401);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.ShadowDecoration.Parent = this.btn_update;
+            this.btn_update.Size = new System.Drawing.Size(145, 43);
+            this.btn_update.TabIndex = 132;
+            this.btn_update.Text = "Cập nhật mật khẩu";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // UserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 531);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Remove);
-            this.Controls.Add(this.btn_UploadImg);
             this.Controls.Add(this.rjCircularPictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
             this.Controls.Add(this.tb_Phone);
             this.Controls.Add(this.tb_Address);
-            this.Controls.Add(this.tb_LName);
-            this.Controls.Add(this.tb_FName);
+            this.Controls.Add(this.tb_Name);
             this.Controls.Add(this.tb_ID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -311,20 +302,18 @@
         public System.Windows.Forms.RadioButton radioButtonMale;
         public System.Windows.Forms.TextBox tb_Phone;
         public System.Windows.Forms.TextBox tb_Address;
-        public System.Windows.Forms.TextBox tb_LName;
-        public System.Windows.Forms.TextBox tb_FName;
+        public System.Windows.Forms.TextBox tb_Name;
         public System.Windows.Forms.TextBox tb_ID;
         protected System.Windows.Forms.Label label7;
         protected System.Windows.Forms.Label label6;
         protected System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
         private Template.RJCircularPictureBox rjCircularPictureBox1;
-        protected System.Windows.Forms.Button btn_UploadImg;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Remove;
         private System.Windows.Forms.Label label8;
+        internal Guna.UI2.WinForms.Guna2Button btn_update;
     }
 }

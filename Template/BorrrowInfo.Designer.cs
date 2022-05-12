@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb_searchUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,33 +73,34 @@
             this.btn_add.Size = new System.Drawing.Size(90, 53);
             this.btn_add.TabIndex = 51;
             this.btn_add.Text = "Search";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // Guna2TextBox1
+            // tb_searchUser
             // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 20;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.FocusedState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.HoverState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Location = new System.Drawing.Point(36, 12);
-            this.Guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "ID user";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.ShadowDecoration.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Size = new System.Drawing.Size(345, 52);
-            this.Guna2TextBox1.TabIndex = 117;
+            this.tb_searchUser.Animated = true;
+            this.tb_searchUser.BorderRadius = 20;
+            this.tb_searchUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_searchUser.DefaultText = "";
+            this.tb_searchUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_searchUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_searchUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_searchUser.DisabledState.Parent = this.tb_searchUser;
+            this.tb_searchUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_searchUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.tb_searchUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_searchUser.FocusedState.Parent = this.tb_searchUser;
+            this.tb_searchUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_searchUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_searchUser.HoverState.Parent = this.tb_searchUser;
+            this.tb_searchUser.Location = new System.Drawing.Point(36, 12);
+            this.tb_searchUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_searchUser.Name = "tb_searchUser";
+            this.tb_searchUser.PasswordChar = '\0';
+            this.tb_searchUser.PlaceholderText = "ID user";
+            this.tb_searchUser.SelectedText = "";
+            this.tb_searchUser.ShadowDecoration.Parent = this.tb_searchUser;
+            this.tb_searchUser.Size = new System.Drawing.Size(345, 52);
+            this.tb_searchUser.TabIndex = 117;
             // 
             // label1
             // 
@@ -192,6 +193,7 @@
             this.btn_huy.Size = new System.Drawing.Size(122, 43);
             this.btn_huy.TabIndex = 127;
             this.btn_huy.Text = "Hủy";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // guna2Button1
             // 
@@ -214,6 +216,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(122, 43);
             this.guna2Button1.TabIndex = 128;
             this.guna2Button1.Text = "Mượn";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label8
             // 
@@ -251,9 +254,8 @@
             this.lb_iduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_iduser.Location = new System.Drawing.Point(156, 175);
             this.lb_iduser.Name = "lb_iduser";
-            this.lb_iduser.Size = new System.Drawing.Size(90, 24);
+            this.lb_iduser.Size = new System.Drawing.Size(0, 19);
             this.lb_iduser.TabIndex = 134;
-            this.lb_iduser.Text = "20161332";
             // 
             // lb_dateofbirth
             // 
@@ -261,9 +263,8 @@
             this.lb_dateofbirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_dateofbirth.Location = new System.Drawing.Point(158, 251);
             this.lb_dateofbirth.Name = "lb_dateofbirth";
-            this.lb_dateofbirth.Size = new System.Drawing.Size(100, 24);
+            this.lb_dateofbirth.Size = new System.Drawing.Size(0, 19);
             this.lb_dateofbirth.TabIndex = 135;
-            this.lb_dateofbirth.Text = "25/07/2002";
             // 
             // lb_nameuser
             // 
@@ -271,9 +272,8 @@
             this.lb_nameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nameuser.Location = new System.Drawing.Point(156, 212);
             this.lb_nameuser.Name = "lb_nameuser";
-            this.lb_nameuser.Size = new System.Drawing.Size(125, 24);
+            this.lb_nameuser.Size = new System.Drawing.Size(0, 19);
             this.lb_nameuser.TabIndex = 136;
-            this.lb_nameuser.Text = "Hồ Thái Long";
             // 
             // lb_idbook
             // 
@@ -342,11 +342,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Guna2TextBox1);
+            this.Controls.Add(this.tb_searchUser);
             this.Controls.Add(this.btn_add);
             this.Name = "BorrowInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrrowInfo";
+            this.Load += new System.EventHandler(this.BorrowInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,7 +356,7 @@
 
         #endregion
         internal Guna.UI2.WinForms.Guna2Button btn_add;
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
+        internal Guna.UI2.WinForms.Guna2TextBox tb_searchUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

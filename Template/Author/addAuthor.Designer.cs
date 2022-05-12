@@ -60,6 +60,7 @@
             this.btn_add.TabIndex = 183;
             this.btn_add.Text = "Thêm";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_can
             // 
@@ -69,6 +70,7 @@
             this.btn_can.TabIndex = 184;
             this.btn_can.Text = "Hủy";
             this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
             // 
             // dateTimePicker1
             // 
@@ -165,7 +167,7 @@
             this.label2.TabIndex = 186;
             this.label2.Text = "Tên tác giả:";
             // 
-            // addLoc
+            // AddAuthor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +184,7 @@
             this.Controls.Add(this.btn_can);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label10);
-            this.Name = "addLoc";
+            this.Name = "AddAuthor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addAuthor";
             this.ResumeLayout(false);
@@ -193,7 +195,7 @@
         #endregion
 
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btn_add;
+        public System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_can;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.RadioButton radioButtonFemale;

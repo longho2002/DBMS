@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
@@ -7,6 +9,7 @@ namespace Template
 {
     public partial class Account : Form
     {
+        private MY_DB db = new MY_DB();
         public Account()
         {
             InitializeComponent();
@@ -14,6 +17,9 @@ namespace Template
 
             // pan_Acc.Location = new Point(21, 18);
             // pan_Acc.Size = new Size(170, 170);
+            SqlCommand cmd = new SqlCommand("Select", db.getConnection);
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
             int x = 20, y = 20;
             for (int i = 1; i <= 20; i++)
             {
@@ -104,7 +110,7 @@ namespace Template
         {
             UserInfo a = new UserInfo();
             a.FormBorderStyle = FormBorderStyle.Fixed3D;
-            Globals.setIDUser((sender as Guna2GradientPanel).Controls[0].Text);
+            Globals.setIDUsertmp((sender as Guna2GradientPanel).Controls[0].Text);
             a.ShowDialog();
         }
 
@@ -124,6 +130,12 @@ namespace Template
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
+
+        }
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            Register a = new Register();
+            a.ShowDialog(this);
         }
     }
 }

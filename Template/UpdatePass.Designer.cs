@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 281);
+            this.ClientSize = new System.Drawing.Size(634, 281);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.textBox3);

@@ -38,14 +38,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.tb_cat = new System.Windows.Forms.TextBox();
+            this.tb_price = new System.Windows.Forms.TextBox();
+            this.cb_pos = new System.Windows.Forms.ComboBox();
+            this.date_buy = new System.Windows.Forms.DateTimePicker();
+            this.publish_date = new System.Windows.Forms.DateTimePicker();
+            this.cb_nxb = new System.Windows.Forms.ComboBox();
+            this.cb_author = new System.Windows.Forms.ComboBox();
             this.btn_publisher = new System.Windows.Forms.Button();
             this.btn_pos = new System.Windows.Forms.Button();
             this.btn_author = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.btn_editAuth = new System.Windows.Forms.Button();
             this.btn_editPub = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +141,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(379, 423);
+            this.label8.Location = new System.Drawing.Point(379, 436);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 24);
             this.label8.TabIndex = 9;
@@ -156,72 +157,72 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Ngày mua:";
             // 
-            // textBox1
+            // tb_name
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(548, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 29);
-            this.textBox1.TabIndex = 11;
+            this.tb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_name.Location = new System.Drawing.Point(548, 116);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(269, 29);
+            this.tb_name.TabIndex = 11;
             // 
-            // textBox2
+            // tb_cat
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(548, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 29);
-            this.textBox2.TabIndex = 12;
+            this.tb_cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cat.Location = new System.Drawing.Point(548, 162);
+            this.tb_cat.Name = "tb_cat";
+            this.tb_cat.Size = new System.Drawing.Size(269, 29);
+            this.tb_cat.TabIndex = 12;
             // 
-            // textBox4
+            // tb_price
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(548, 294);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 29);
-            this.textBox4.TabIndex = 14;
+            this.tb_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_price.Location = new System.Drawing.Point(548, 294);
+            this.tb_price.Name = "tb_price";
+            this.tb_price.Size = new System.Drawing.Size(269, 29);
+            this.tb_price.TabIndex = 14;
             // 
-            // comboBox1
+            // cb_pos
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(548, 428);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(208, 32);
-            this.comboBox1.TabIndex = 17;
+            this.cb_pos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_pos.FormattingEnabled = true;
+            this.cb_pos.Location = new System.Drawing.Point(548, 428);
+            this.cb_pos.Name = "cb_pos";
+            this.cb_pos.Size = new System.Drawing.Size(172, 32);
+            this.cb_pos.TabIndex = 17;
             // 
-            // dateTimePicker1
+            // date_buy
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(548, 385);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(257, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.date_buy.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_buy.Location = new System.Drawing.Point(548, 385);
+            this.date_buy.Name = "date_buy";
+            this.date_buy.Size = new System.Drawing.Size(257, 20);
+            this.date_buy.TabIndex = 18;
             // 
-            // dateTimePicker2
+            // publish_date
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(548, 341);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(257, 20);
-            this.dateTimePicker2.TabIndex = 19;
+            this.publish_date.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publish_date.Location = new System.Drawing.Point(548, 341);
+            this.publish_date.Name = "publish_date";
+            this.publish_date.Size = new System.Drawing.Size(257, 20);
+            this.publish_date.TabIndex = 19;
             // 
-            // comboBox2
+            // cb_nxb
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(548, 247);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 32);
-            this.comboBox2.TabIndex = 20;
+            this.cb_nxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_nxb.FormattingEnabled = true;
+            this.cb_nxb.Location = new System.Drawing.Point(548, 247);
+            this.cb_nxb.Name = "cb_nxb";
+            this.cb_nxb.Size = new System.Drawing.Size(172, 32);
+            this.cb_nxb.TabIndex = 20;
             // 
-            // comboBox3
+            // cb_author
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(548, 200);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 32);
-            this.comboBox3.TabIndex = 21;
+            this.cb_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_author.FormattingEnabled = true;
+            this.cb_author.Location = new System.Drawing.Point(548, 200);
+            this.cb_author.Name = "cb_author";
+            this.cb_author.Size = new System.Drawing.Size(172, 32);
+            this.cb_author.TabIndex = 21;
             // 
             // btn_publisher
             // 
@@ -235,9 +236,9 @@
             // 
             // btn_pos
             // 
-            this.btn_pos.Location = new System.Drawing.Point(762, 428);
+            this.btn_pos.Location = new System.Drawing.Point(726, 428);
             this.btn_pos.Name = "btn_pos";
-            this.btn_pos.Size = new System.Drawing.Size(55, 32);
+            this.btn_pos.Size = new System.Drawing.Size(42, 32);
             this.btn_pos.TabIndex = 24;
             this.btn_pos.Text = "Thêm";
             this.btn_pos.UseVisualStyleBackColor = true;
@@ -274,6 +275,7 @@
             this.btn_update.Size = new System.Drawing.Size(122, 43);
             this.btn_update.TabIndex = 130;
             this.btn_update.Text = "Cập nhật";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_xoa
             // 
@@ -296,6 +298,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(122, 43);
             this.btn_xoa.TabIndex = 129;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_editAuth
             // 
@@ -325,11 +328,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(774, 428);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 32);
+            this.button1.TabIndex = 134;
+            this.button1.Text = "Sửa";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UpdateRemoveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 588);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_editPub);
             this.Controls.Add(this.btn_editAuth);
             this.Controls.Add(this.btn_update);
@@ -337,14 +351,14 @@
             this.Controls.Add(this.btn_author);
             this.Controls.Add(this.btn_pos);
             this.Controls.Add(this.btn_publisher);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cb_author);
+            this.Controls.Add(this.cb_nxb);
+            this.Controls.Add(this.publish_date);
+            this.Controls.Add(this.date_buy);
+            this.Controls.Add(this.cb_pos);
+            this.Controls.Add(this.tb_price);
+            this.Controls.Add(this.tb_cat);
+            this.Controls.Add(this.tb_name);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -358,7 +372,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "UpdateRemoveBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateRemoveBook";
+            this.Text = "no";
             this.Load += new System.EventHandler(this.UpdateRemoveBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -379,14 +393,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.TextBox tb_cat;
+        private System.Windows.Forms.TextBox tb_price;
+        private System.Windows.Forms.ComboBox cb_pos;
+        private System.Windows.Forms.DateTimePicker date_buy;
+        private System.Windows.Forms.DateTimePicker publish_date;
+        private System.Windows.Forms.ComboBox cb_nxb;
+        private System.Windows.Forms.ComboBox cb_author;
         private System.Windows.Forms.Button btn_publisher;
         private System.Windows.Forms.Button btn_pos;
         private System.Windows.Forms.Button btn_author;
@@ -394,5 +408,6 @@
         internal Guna.UI2.WinForms.Guna2Button btn_xoa;
         private System.Windows.Forms.Button btn_editAuth;
         private System.Windows.Forms.Button btn_editPub;
+        private System.Windows.Forms.Button button1;
     }
 }

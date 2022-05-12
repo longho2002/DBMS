@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb_searchUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_searchuser = new Guna.UI2.WinForms.Guna2Button();
             this.pan_userInfo = new Guna.UI2.WinForms.Guna2Panel();
             this.lb_gender = new System.Windows.Forms.Label();
@@ -39,7 +39,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -48,50 +47,44 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pan_bookBorrow = new System.Windows.Forms.Panel();
-            this.pan_bookQueue = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.pan_listBook = new System.Windows.Forms.Panel();
             this.pan_bookDetail = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             this.pan_userInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.pan_Book.SuspendLayout();
-            this.pan_bookBorrow.SuspendLayout();
-            this.pan_bookQueue.SuspendLayout();
             this.pan_listBook.SuspendLayout();
             this.pan_bookDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Guna2TextBox1
+            // tb_searchUser
             // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 20;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.FocusedState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.HoverState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Location = new System.Drawing.Point(271, 5);
-            this.Guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "ID user";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.ShadowDecoration.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Size = new System.Drawing.Size(338, 49);
-            this.Guna2TextBox1.TabIndex = 118;
+            this.tb_searchUser.Animated = true;
+            this.tb_searchUser.BorderRadius = 20;
+            this.tb_searchUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_searchUser.DefaultText = "";
+            this.tb_searchUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_searchUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_searchUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_searchUser.DisabledState.Parent = this.tb_searchUser;
+            this.tb_searchUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_searchUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.tb_searchUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_searchUser.FocusedState.Parent = this.tb_searchUser;
+            this.tb_searchUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_searchUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_searchUser.HoverState.Parent = this.tb_searchUser;
+            this.tb_searchUser.Location = new System.Drawing.Point(271, 5);
+            this.tb_searchUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_searchUser.Name = "tb_searchUser";
+            this.tb_searchUser.PasswordChar = '\0';
+            this.tb_searchUser.PlaceholderText = "ID user";
+            this.tb_searchUser.SelectedText = "";
+            this.tb_searchUser.ShadowDecoration.Parent = this.tb_searchUser;
+            this.tb_searchUser.Size = new System.Drawing.Size(338, 49);
+            this.tb_searchUser.TabIndex = 118;
             // 
             // btn_searchuser
             // 
@@ -220,22 +213,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên:";
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(27, 55);
-            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(136, 136);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 1;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -347,66 +324,11 @@
             // pan_bookBorrow
             // 
             this.pan_bookBorrow.AutoScroll = true;
-            this.pan_bookBorrow.Controls.Add(this.pan_bookQueue);
             this.pan_bookBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pan_bookBorrow.Location = new System.Drawing.Point(479, 46);
             this.pan_bookBorrow.Name = "pan_bookBorrow";
             this.pan_bookBorrow.Size = new System.Drawing.Size(453, 278);
             this.pan_bookBorrow.TabIndex = 1;
-            // 
-            // pan_bookQueue
-            // 
-            this.pan_bookQueue.Controls.Add(this.label11);
-            this.pan_bookQueue.Controls.Add(this.dateTimePicker1);
-            this.pan_bookQueue.Controls.Add(this.label10);
-            this.pan_bookQueue.Controls.Add(this.label9);
-            this.pan_bookQueue.Location = new System.Drawing.Point(3, 17);
-            this.pan_bookQueue.Name = "pan_bookQueue";
-            this.pan_bookQueue.Size = new System.Drawing.Size(447, 68);
-            this.pan_bookQueue.TabIndex = 11;
-            this.pan_bookQueue.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 41);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Ngày trả:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 37);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(356, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Delete";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 15);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(210, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Cuốn theo chiều gió(Long đẹp trai)";
             // 
             // pan_listBook
             // 
@@ -453,6 +375,23 @@
             this.guna2Button4.Size = new System.Drawing.Size(93, 41);
             this.guna2Button4.TabIndex = 128;
             this.guna2Button4.Text = "Clear";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(27, 55);
+            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(136, 136);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 1;
+            this.rjCircularPictureBox1.TabStop = false;
             // 
             // Borrow
             // 
@@ -465,28 +404,26 @@
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.pan_userInfo);
             this.Controls.Add(this.btn_searchuser);
-            this.Controls.Add(this.Guna2TextBox1);
+            this.Controls.Add(this.tb_searchUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Borrow";
             this.Text = "test";
+            this.Load += new System.EventHandler(this.Borrow_Load);
             this.pan_userInfo.ResumeLayout(false);
             this.pan_userInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.pan_Book.ResumeLayout(false);
             this.pan_Book.PerformLayout();
-            this.pan_bookBorrow.ResumeLayout(false);
-            this.pan_bookQueue.ResumeLayout(false);
-            this.pan_bookQueue.PerformLayout();
             this.pan_listBook.ResumeLayout(false);
             this.pan_bookDetail.ResumeLayout(false);
             this.pan_bookDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
+        internal Guna.UI2.WinForms.Guna2TextBox tb_searchUser;
         private Guna.UI2.WinForms.Guna2Button btn_searchuser;
         private Guna.UI2.WinForms.Guna2Panel pan_userInfo;
         private System.Windows.Forms.Label lb_gender;
@@ -506,14 +443,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pan_bookBorrow;
-        private System.Windows.Forms.Panel pan_bookQueue;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pan_listBook;
         private System.Windows.Forms.Panel pan_bookDetail;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

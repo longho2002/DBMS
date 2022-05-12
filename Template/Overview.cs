@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,68 +17,100 @@ namespace Template
 {
     public partial class Overview : Form
     {
+        private MY_DB db = new MY_DB();
         private int page = 1;
         private int max_page = 100;
 
         public Overview()
         {
             InitializeComponent();
-            guna2DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            //pan_tmp.Location = new System.Drawing.Point(13, 56);
-            //pan_tmp.Size = new System.Drawing.Size(253, 46);
-            //also adding values updates and animates the chart automatically
-            List<int> a = new List<int> {5, 1, 4, 2, 3, 1, 5, 3, 5, 10, 11, 12};
-            List<int> b = new List<int> {1, 2, 4, 2, 3, 1, 5, 3, 6, 2, 4, 12};
-            // option = 1 year  =2 week  month
-            InitChart(a, b, 1);
+
+        }
+        private void Overview_Load(object sender, EventArgs e)
+        {
+            DataGridView1.RowTemplate.Height = 40;
+            DataGridView1.ColumnHeadersHeight = 30;
+            DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            SqlCommand cmd = new SqlCommand("select * from Borrowed_Information", db.getConnection);
+            // cmd.CommandType=CommandType.StoredProcedure;  
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            max_page = Convert.ToInt32(Math.Ceiling(dt.Rows.Count / 5.0));
+            lb_Page.Text = ("Trang " + page.ToString() + "/" + max_page.ToString());
+            showPage();
+            //List<int> a = new List<int> { 5, 1, 4, 2, 3, 1, 5, 3, 5, 10, 11, 12 };
+            //List<int> b = new List<int> { 1, 2, 4, 2, 3, 1, 5, 3, 6, 2, 4, 12 };
+            //// option = 1 year  =2 week  month
+            //InitChart(a, b, 1);
+
+
+
+            DataTable dt1 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Tolal()", db.getConnection);
+            da.SelectCommand = cmd;
+            da.Fill(dt1);
+            lb_totalU.Text = dt1.Rows[0][0].ToString();
+            lb_totalBook.Text = dt1.Rows[0][1].ToString();
+            lb_issued.Text = dt1.Rows[0][2].ToString();
+            lb_allBorrow.Text = dt1.Rows[0][3].ToString();
 
             int y = 56;
-            int height = 46;
-
+            DataTable dt2 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.top_5_Account()", db.getConnection);
+            da.SelectCommand = cmd;
+            da.Fill(dt2);
             for (int i = 0; i < 5; i++)
             {
-                guna2Panel3.Controls.Add(createTop("Cozark", 12, 13, y + 66 * i + 10));
+                guna2Panel3.Controls.Add(createTop(dt2.Rows[i][0].ToString(), Convert.ToInt32(dt2.Rows[i][1].ToString()), 13, y + 66 * i + 10));
             }
-            guna2DataGridView1.RowTemplate.Height = 40;
-            guna2DataGridView1.ColumnHeadersHeight = 30;
+            cmd.Parameters.Clear();
+            DataTable dt3 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Statistic_Borrow_By_Weeks(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt3);
+            cmd.Parameters.Clear();
+
+            DataTable dt4 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Statistic_Paid_By_Weeks(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt4);
+
+            InitChart(dt3, dt4, 2);
         }
 
-
-        public void InitChart(List<int> valueBorrow, List<int> valueReturn, int option)
+        public void InitChart(DataTable a, DataTable b, int option)
         {
+            cartesianChart1.AxisX.Clear();
+            cartesianChart1.AxisY.Clear();
+            cartesianChart1.Series.Clear();
+            List<string> labelX = new List<string>();
+            foreach (DataRow item in a.Rows)
+            {
+                labelX.Add(item[0].ToString());
+            }
+            List<double> valueBorrow = new List<double>();
+            List<double> valueReturn = new List<double>();
+            int n = a.Rows.Count;
+            for (int i = 0; i < n; i++)
+            {
+                //MessageBox.Show(a.Rows[i][1].ToString());
+                valueBorrow.Add(Convert.ToDouble(a.Rows[i][1].ToString().Equals("") ? "0": a.Rows[i][1].ToString()));
+                valueReturn.Add(Convert.ToDouble(b.Rows[i][1].ToString().Equals("") ? "0" : b.Rows[i][1].ToString()));
+            }
+            string title = "";
             if (option == 1)
-                cartesianChart1.AxisX.Add(new Axis
-                {
-                    Title = "Year",
-                    Labels = new[] {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-                });
-            else if (option == 0)
+                title = "Year";
+            else if (option == 2)
+                title = "Week";
+            cartesianChart1.AxisX.Add(new Axis
             {
-                cartesianChart1.AxisX.Add(new Axis
-                {
-                    Title = "Week",
-                    Labels = new[] {"Mon", "Tue", "Wed", "Thus", "Fri", "Sat", "Sun"}
-                });
-            }
-            else
-            {
-                List<string> num = new List<string>();
-                for (int i = 1; i <= option; i++)
-                {
-                    num.Add(i.ToString());
-                }
-                cartesianChart1.AxisX.Add(new Axis
-                {
-                    Title = "Month",
-                    Labels = num
-                });
-            }
+                Title = title,
+                Labels = labelX,
+            });
 
-            List<string> tmp =
-                (new List<int>(valueBorrow.Concat(valueReturn).Distinct())).ConvertAll<string>(delegate(int i)
-                {
-                    return i.ToString();
-                });
 
             cartesianChart1.AxisY.Add(new Axis
             {
@@ -113,16 +146,59 @@ namespace Template
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            // THIS WEEK
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from dbo.Statistic_Borrow_By_Weeks(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            DataTable dt1 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Statistic_Paid_By_Weeks(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt1);
+
+            InitChart(dt, dt1, 2);
             toggleButton(sender as Guna2Button);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            //THIS MONTH
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from dbo.Statistic_Borrow_By_Months(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            DataTable dt1 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Statistic_Paid_By_Months(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt1);
+            InitChart(dt, dt1, 30);
             toggleButton(sender as Guna2Button);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            // THIS YEAR
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from dbo.Statistic_Borrow_By_Years(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+
+            DataTable dt4 = new DataTable();
+            cmd = new SqlCommand("select * from dbo.Statistic_Paid_By_Years(@date)", db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
+            da.SelectCommand = cmd;
+            da.Fill(dt4);
+            InitChart(dt, dt4, 1);
             toggleButton(sender as Guna2Button);
         }
 
@@ -154,6 +230,7 @@ namespace Template
             {
                 page--;
                 lb_Page.Text = ("Trang " + page.ToString() + "/" + max_page.ToString());
+                showPage();
             }
         }
 
@@ -163,6 +240,7 @@ namespace Template
             {
                 page++;
                 lb_Page.Text = ("Trang " + page.ToString() + "/" + max_page.ToString());
+                showPage();
             }
         }
 
@@ -178,7 +256,7 @@ namespace Template
             lb_name.Location = new System.Drawing.Point(23, 14);
             lb_name.Margin = new System.Windows.Forms.Padding(2);
             lb_name.Size = new System.Drawing.Size(61, 26);
-            lb_name.Text = name;
+            lb_name.Text = "ID: " + name;
             // 
             // guna2HtmlLabel13
             // 
@@ -220,8 +298,38 @@ namespace Template
             return pan_tmp;
         }
 
-        private void Overview_Load(object sender, EventArgs e)
+        void showPage()
         {
+            DataGridView1.Rows.Clear();
+            DataGridView1.DataSource = null;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.paginate(@page, @num)", db.getConnection);
+            // cmd.CommandType=CommandType.StoredProcedure;  
+            cmd.Parameters.AddWithValue("@page", page - 1);
+            cmd.Parameters.AddWithValue("@num", 5);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            DataGridView1.Rows.Add(dt.Rows.Count);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                DataGridView1.Rows[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                DataGridView1.Rows[i].Cells[0].Value = item[0].ToString();
+                DataGridView1.Rows[i].Cells[1].Value = item[2].ToString();
+                DataGridView1.Rows[i].Cells[2].Value = item[1].ToString();
+                DataGridView1.Rows[i].Cells[3].Value = item[3].ToString().Split(' ')[0];
+                if (item[4].ToString().Equals("Compensated "))
+                {
+                    DataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Red;
+                }
+                else
+                {
+                    DataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.LawnGreen;
+                }
+                DataGridView1.Rows[i].Cells[4].Value = item[4].ToString();
+                i++;
+            }
         }
+
     }
 }

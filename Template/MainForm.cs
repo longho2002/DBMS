@@ -20,14 +20,17 @@ namespace Template
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Globals.SetUser("12", "customer", "Cozark");
-            btn_Borrow.Visible = false;
+            Globals.SetUser("AD-004", "admin", "Cozark");
             lb_name.Text = "Welcome Back (" + Globals.nameUser + ")";
+            lb_role.Text = Globals.role;
             if (Globals.role.Equals("customer"))
             {
                 OverviewUser aa = new OverviewUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 Pan_Infor.Controls.Add(aa);
                 aa.Show();
+                btn_Borrow.Visible = false;
+                btn_statistic.Visible = false;
+                btn_book.Location = new Point(21, 286);
                 return;
             }
             Overview a = new Overview() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -37,15 +40,24 @@ namespace Template
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             Pan_Infor.Controls.Clear();
             toggleButton_Click(sender as Guna2Button);
             book a = new book() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
         private void btn_Acccount_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             toggleButton_Click((sender as Guna2Button));
             Pan_Infor.Controls.Clear();
             if (Globals.role.Equals("customer"))
@@ -58,10 +70,16 @@ namespace Template
             Account acc = new Account() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Add(acc);
             acc.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
         private void btn_Overview_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             toggleButton_Click((sender as Guna2Button));
             Pan_Infor.Controls.Clear();
             if (Globals.role.Equals("customer"))
@@ -74,6 +92,9 @@ namespace Template
             Overview a = new Overview() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Add(a);
             a.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
         private void toggleButton_Click(Guna2Button a)
@@ -106,16 +127,25 @@ namespace Template
 
         private void btn__Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
             guna2ShadowForm1.SetShadowForm(this);
             Statistic a = new Statistic() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
             if (Globals.role.Equals("customer"))
@@ -128,16 +158,24 @@ namespace Template
             DashBoard a = new DashBoard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Pan_Infor.Controls.Add(a);
             a.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
         private void btn_Borrow_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             toggleButton_Click((sender as Guna2Button));
-            Pan_Infor.Controls.Clear();
             Pan_Infor.Controls.Clear();
             Borrow a = new Borrow() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Pan_Infor.Controls.Add(a);
             a.Show();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
         }
 
 

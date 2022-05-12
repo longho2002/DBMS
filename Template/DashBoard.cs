@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 
@@ -7,6 +10,8 @@ namespace Template
 {
     public partial class DashBoard : Form
     {
+        private int option = 0;
+        private MY_DB db = new MY_DB();
         public DashBoard()
         {
             InitializeComponent();
@@ -19,35 +24,56 @@ namespace Template
         private void Guna2Button13_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
+            option = 0;
             CreateMuon();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
+            option = 1;
             CreateTra();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
+            option = 2;
             CreateLoi();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
+            option = 3;
             CreateQuaHan();
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
+            option = 4;
             CreateDenbu();
         }
         private void btn_Borrow_Now_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("update_Borrowed_Information", db.getConnection);
+                cmd.Parameters.Add("@Borrowed_Information_ID", SqlDbType.Date, 100).Value = ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
+                cmd.Parameters.Add("@Librarian_ID", SqlDbType.Date, 100).Value = Globals.idUser;
+                cmd.Parameters.Add("@Option", SqlDbType.Date, 100).Value = 1;
 
+                db.openConnection();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                db.closeConnection();
+            }
+            catch (SqlException exception)
+            {
+                MessageBox.Show(exception.Message);
+                db.closeConnection();
+            }
         }
 
 
@@ -58,9 +84,21 @@ namespace Template
             //pan_quahan.Location = new Point(10, 175);
             //pan_quahan.Name = "pan_quahan";
             //pan_quahan.Size = new Size(781, 100);
-            for (int i = 0; i < 10; i++)
+            panMain.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("select * from dbo.getAll_Book_OutofDate(@search)", db.getConnection);
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_search.Text.Trim();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
             {
-                panMain.Controls.Add(QuaHan(45, 30 + 100 * i + 20 * i));
+                Byte[] data = new Byte[0];
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                MemoryStream mem = new MemoryStream(data);
+                panMain.Controls.Add(QuaHan(item["Borrowed_Information_ID"].ToString(), item["usersname"].ToString(), item["Book_Name"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], item["days"].ToString().Split(' ')[0], Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
+                i++;
             }
             panMain.Controls.Add(new Panel()
             {
@@ -74,10 +112,22 @@ namespace Template
             //pan_quahan.Location = new Point(10, 175);
             //pan_quahan.Name = "pan_quahan";
             //pan_quahan.Size = new Size(781, 100);
-            for (int i = 0; i < 10; i++)
+            panMain.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("select * from dbo.get_All_Book_Borrowing(@search)", db.getConnection);
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_search.Text.Trim();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
             {
-                panMain.Controls.Add(Muon(45, 30 + 100 * i + 20 * i));
+                Byte[] data = new Byte[0];
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                MemoryStream mem = new MemoryStream(data);
+                panMain.Controls.Add(Muon(item["Borrowed_Information_ID"].ToString(),  item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
+                i++;
             }
+
             panMain.Controls.Add(new Panel()
             {
                 Width = 0,
@@ -90,9 +140,20 @@ namespace Template
             //pan_quahan.Location = new Point(10, 175);
             //pan_quahan.Name = "pan_quahan";
             //pan_quahan.Size = new Size(781, 100);
-            for (int i = 0; i < 10; i++)
+            panMain.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("select * from dbo.getAll_Book_waitingForCompensation(@search)", db.getConnection);
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_search.Text.Trim();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
             {
-                panMain.Controls.Add(Loi(45, 30 + 100 * i + 20 * i));
+                Byte[] data = new Byte[0];
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                MemoryStream mem = new MemoryStream(data);
+                panMain.Controls.Add(Loi(item["Borrowed_Information_ID"].ToString(), item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], item["Price"].ToString(), Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
+                i++;
             }
             panMain.Controls.Add(new Panel()
             {
@@ -103,13 +164,23 @@ namespace Template
         }
         private void CreateTra()
         {
-            //pan_quahan.Location = new Point(10, 175);
-            //pan_quahan.Name = "pan_quahan";
-            //pan_quahan.Size = new Size(781, 100);
-            for (int i = 0; i < 10; i++)
+            panMain.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("select * from dbo.get_All_Book_Paid(@search)", db.getConnection);
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_search.Text.Trim();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
             {
-                panMain.Controls.Add(Tra(45, 30 + 100 * i + 20 * i));
+                //System.IO.File.ReadAllBytes(@"path/to/image.extension");
+                Byte[] data = new Byte[0];
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                MemoryStream mem = new MemoryStream(data);
+                panMain.Controls.Add(Tra(item["Borrowed_Information_ID"].ToString(), item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], item["Return_Day"].ToString().Split(' ')[0], Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
+                i++;
             }
+
             panMain.Controls.Add(new Panel()
             {
                 Width = 0,
@@ -119,13 +190,26 @@ namespace Template
         }
         private void CreateDenbu()
         {
-            //pan_quahan.Location = new Point(10, 175);
-            //pan_quahan.Name = "pan_quahan";
-            //pan_quahan.Size = new Size(781, 100);
-            for (int i = 0; i < 10; i++)
+            panMain.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("select * from dbo.getAll_book_compensated(@search)", db.getConnection);
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_search.Text.Trim();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int i = 0;
+            foreach (DataRow item in dt.Rows)
             {
-                panMain.Controls.Add(Denbu(45, 30 + 100 * i + 20 * i));
+                Byte[] data = new Byte[0];
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                MemoryStream mem = new MemoryStream(data);
+                panMain.Controls.Add(Denbu(item["Borrowed_Information_ID"].ToString(), item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], item["Return_Day"].ToString().Split(' ')[0], Image.FromStream(mem), item["Price"].ToString(), 45, 30 + 100 * i + 20 * i));
+                i++;
             }
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    panMain.Controls.Add(Denbu(45, 30 + 100 * i + 20 * i));
+            //}
             panMain.Controls.Add(new Panel()
             {
                 Width = 0,
@@ -134,7 +218,7 @@ namespace Template
             });
         }
 
-        private Panel QuaHan(int x, int y)
+        private Panel QuaHan(string id, string nameU, string nameB, string dateBorrow, string dateQH, Image image, int x, int y)
         {
             Panel pan_quahan = new Panel();
             // 
@@ -164,7 +248,7 @@ namespace Template
             lb_datequahan.ForeColor = Color.Red;
             lb_datequahan.Location = new Point(631, 53);
             lb_datequahan.Size = new Size(65, 20);
-            lb_datequahan.Text = "14 ngày";
+            lb_datequahan.Text = dateQH + " ngày";
             // 
             // label2
             // 
@@ -174,7 +258,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: Đoán xem";
+            lb_book.Text = "Book: " + nameB;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -185,7 +269,7 @@ namespace Template
             date_muon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             date_muon.Location = new Point(631, 24);
             date_muon.Size = new Size(80, 20);
-            date_muon.Text = "20/2/2002";
+            date_muon.Text = dateBorrow;
             // 
             // label5
             // 
@@ -195,7 +279,7 @@ namespace Template
             lb_name.ForeColor = SystemColors.ActiveCaptionText;
             lb_name.Location = new Point(110, 24);
             lb_name.Size = new Size(190, 19);
-            lb_name.Text = "Name: Vy không yêu Trung";
+            lb_name.Text = "Name: " + nameU;
             lb_name.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox2
@@ -208,9 +292,17 @@ namespace Template
             pic.Size = new Size(85, 89);
             pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pic.TabStop = false;
+            pic.Image = image;
             //
             // pan_quahan
             // 
+            Label lb_id = new Label()
+            {
+                Text = id,
+                Visible = false,
+            };
+
+            pan_quahan.Controls.Add(lb_id);
             pan_quahan.Controls.Add(lb_name);
             pan_quahan.Controls.Add(lb_quahan);
             pan_quahan.Controls.Add(lb_ngaymuon);
@@ -222,11 +314,11 @@ namespace Template
             pan_quahan.Name = "pan_quahan";
             pan_quahan.Size = new Size(794, 100);
             pan_quahan.Margin = new Padding(0, 0, 0, 100);
+
             return pan_quahan;
         }
-        private Panel Muon(int x, int y)
+        private Panel Muon(string id, string nameB, string nameU, string dateMuon, Image image, int x, int y)
         {
-
             // 
             // label4
             // 
@@ -236,7 +328,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: Đoán xem";
+            lb_book.Text = "Book: " + nameB;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lb_date_muon
@@ -246,7 +338,7 @@ namespace Template
             lb_date_muon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_date_muon.Location = new Point(435, 44);
             lb_date_muon.Size = new Size(80, 20);
-            lb_date_muon.Text = "20/2/2002";
+            lb_date_muon.Text = dateMuon;
             // 
             // lb_name
             // 
@@ -256,7 +348,7 @@ namespace Template
             lb_name.ForeColor = SystemColors.ActiveCaptionText;
             lb_name.Location = new Point(110, 24);
             lb_name.Size = new Size(190, 19);
-            lb_name.Text = "Name: Vy không yêu Trung";
+            lb_name.Text = "Name: " + nameU;
             lb_name.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btn_add
@@ -290,7 +382,6 @@ namespace Template
             btn_Borrow_Now.Location = new Point(597, 36);
             btn_Borrow_Now.Size = new Size(64, 34);
             btn_Borrow_Now.Text = "Trả";
-            btn_Borrow_Now.Click += new System.EventHandler(this.btn_Borrow_Now_Click);
             // 
             // guna2PictureBox1
             // 
@@ -302,11 +393,18 @@ namespace Template
             guna2PictureBox1.Size = new Size(85, 89);
             guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabStop = false;
+            guna2PictureBox1.Image = image;
             // 
             // pan_Borrow
             // 
             btn_Borrow_Now.Click += btn_Tra_click;
             Panel pan_Borrow = new Panel();
+            Label lb_id = new Label()
+            {
+                Text = id,
+                Visible = false,
+            };
+            pan_Borrow.Controls.Add(lb_id);
             pan_Borrow.Controls.Add(lb_book);
             pan_Borrow.Controls.Add(lb_date_muon);
             pan_Borrow.Controls.Add(lb_name);
@@ -319,9 +417,8 @@ namespace Template
 
             return pan_Borrow;
         }
-        private Panel Loi(int x, int y)
+        private Panel Loi(string id, string nameB, string nameU, string dateMuon, string price, Image image, int x, int y)
         {
-
             // 
             // label10
             // 
@@ -340,7 +437,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: Đoán xem";
+            lb_book.Text = "Book: " + nameB;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -350,7 +447,7 @@ namespace Template
             lb_date.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_date.Location = new Point(509, 24);
             lb_date.Size = new Size(80, 20);
-            lb_date.Text = "20/2/2002";
+            lb_date.Text = dateMuon;
             // 
             // label14
             // 
@@ -362,7 +459,7 @@ namespace Template
             lb_name.Name = "label14";
             lb_name.Size = new Size(190, 19);
             lb_name.TabIndex = 43;
-            lb_name.Text = "Name: Vy không yêu Trung";
+            lb_name.Text = "Name: " + nameU;
             lb_name.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2Button5
@@ -396,7 +493,7 @@ namespace Template
             lb_money.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_money.Location = new Point(509, 52);
             lb_money.Size = new Size(101, 20);
-            lb_money.Text = "100000 VND";
+            lb_money.Text = price + " VND";
             // 
             // guna2PictureBox3
             // 
@@ -407,10 +504,18 @@ namespace Template
             guna2PictureBox31.Size = new Size(85, 89);
             guna2PictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             guna2PictureBox31.TabStop = false;
+            guna2PictureBox31.Image = image;
             // 
             // pan_Offset
             // 
             Panel pan_err = new Panel();
+
+            Label lb_id = new Label()
+            {
+                Text = id,
+                Visible = false,
+            };
+            pan_err.Controls.Add(lb_id);
             pan_err.Controls.Add(lb_giatien);
             pan_err.Controls.Add(lb_money);
             pan_err.Controls.Add(btn_denbu);
@@ -425,7 +530,7 @@ namespace Template
 
             return pan_err;
         }
-        private Panel Tra(int x, int y)
+        private Panel Tra(string id, string nameB, string nameU, string dateMuon, string dateTra, Image image, int x, int y)
         {
             // 
             // label8
@@ -435,7 +540,7 @@ namespace Template
             lb_ngaytra.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_ngaytra.Location = new Point(535, 53);
             lb_ngaytra.Size = new Size(68, 20);
-            lb_ngaytra.Text = "Ngày trả";
+            lb_ngaytra.Text = "Ngày trả:";
             // 
             // label7
             // 
@@ -444,7 +549,7 @@ namespace Template
             lb_ngaymuon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_ngaymuon.Location = new Point(535, 24);
             lb_ngaymuon.Size = new Size(89, 20);
-            lb_ngaymuon.Text = "Ngày mượn";
+            lb_ngaymuon.Text = "Ngày mượn:";
             // 
             // label6
             // 
@@ -453,7 +558,7 @@ namespace Template
             lb_dateReturn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_dateReturn.Location = new Point(640, 53);
             lb_dateReturn.Size = new Size(80, 20);
-            lb_dateReturn.Text = "20/2/2002";
+            lb_dateReturn.Text = dateTra;
             // 
             // label2
             // 
@@ -463,7 +568,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: Đoán xem";
+            lb_book.Text = "Book: " + nameB;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -473,7 +578,7 @@ namespace Template
             dateBorrow.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             dateBorrow.Location = new Point(640, 24);
             dateBorrow.Size = new Size(80, 20);
-            dateBorrow.Text = "20/2/2002";
+            dateBorrow.Text = dateMuon;
             // 
             // label5
             // 
@@ -483,7 +588,7 @@ namespace Template
             lb_name.ForeColor = SystemColors.ActiveCaptionText;
             lb_name.Location = new Point(110, 24);
             lb_name.Size = new Size(190, 19);
-            lb_name.Text = "Name: Vy không yêu Trung";
+            lb_name.Text = "Name: " + nameU;
             lb_name.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox2
@@ -495,11 +600,18 @@ namespace Template
             guna2PictureBox2.Size = new Size(85, 89);
             guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             guna2PictureBox2.TabStop = false;
+            guna2PictureBox2.Image = image;
 
             // 
             // pan_Return
             // 
+            Label lb_id = new Label()
+            {
+                Text = id,
+                Visible = false,
+            };
             Panel pan_return = new Panel();
+            pan_return.Controls.Add(lb_id);
             pan_return.Controls.Add(lb_ngaytra);
             pan_return.Controls.Add(lb_ngaymuon);
             pan_return.Controls.Add(lb_dateReturn);
@@ -512,7 +624,7 @@ namespace Template
 
             return pan_return;
         }
-        private Panel Denbu(int x, int y)
+        private Panel Denbu(string id, string nameB, string nameU, string dateMuon, string dateTra, Image image, string price, int x, int y)
         {
             // 
             // label1
@@ -541,7 +653,7 @@ namespace Template
             lb_money.ForeColor = Color.Red;
             lb_money.Location = new Point(637, 55);
             lb_money.Size = new Size(110, 20);
-            lb_money.Text = "1000000 VND";
+            lb_money.Text = price + " VND";
             // 
             // label10
             // 
@@ -551,7 +663,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: Đoán xem";
+            lb_book.Text = "Book: " + nameB;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
@@ -561,7 +673,7 @@ namespace Template
             lb_date.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_date.Location = new Point(483, 24);
             lb_date.Size = new Size(80, 20);
-            lb_date.Text = "20/2/2002";
+            lb_date.Text = dateMuon;
             // 
             // label12
             // 
@@ -571,7 +683,7 @@ namespace Template
             lb_name.ForeColor = SystemColors.ActiveCaptionText;
             lb_name.Location = new Point(110, 24);
             lb_name.Size = new Size(190, 19);
-            lb_name.Text = "Name: Vy không yêu Trung";
+            lb_name.Text = "Name: " + nameU;
             lb_name.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox1
@@ -583,6 +695,7 @@ namespace Template
             guna2PictureBox1.Size = new Size(85, 89);
             guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabStop = false;
+            guna2PictureBox1.Image = image;
             // 
             // label13
             // 
@@ -600,12 +713,20 @@ namespace Template
             date_return.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             date_return.Location = new Point(483, 55);
             date_return.Size = new Size(80, 20);
-            date_return.Text = "20/2/2002";
+            date_return.Text = dateTra;
 
             // 
             // pannel_denbu
             // 
+            Label lb_id = new Label()
+            {
+                Text = id,
+                Visible = false,
+            };
+
             Panel pannel_denbu = new Panel();
+
+            pannel_denbu.Controls.Add(lb_id);
             pannel_denbu.Controls.Add(label13);
             pannel_denbu.Controls.Add(date_return);
             pannel_denbu.Controls.Add(label1);
@@ -624,32 +745,84 @@ namespace Template
         {
             if ((MessageBox.Show("Confirm return book~", "return book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                String s = ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
-                MessageBox.Show(s);
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("update_Borrowed_Information", db.getConnection);
+                    cmd.Parameters.Add("@Borrowed_Information_ID", SqlDbType.VarChar, 100).Value = ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
+                    cmd.Parameters.Add("@Librarian_ID", SqlDbType.VarChar, 100).Value = Globals.idUser;
+                    cmd.Parameters.Add("@Option", SqlDbType.Int, 100).Value = 0;
+
+                    db.openConnection();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    CreateMuon();
+                    db.closeConnection();
+                }
+                catch (SqlException exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    db.closeConnection();
+                }
+
             }
         }
         private void btn_Loi_click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("Error Book", "Error book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            if ((MessageBox.Show("Báo lỗi", "Error book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                 DialogResult.Yes))
             {
-                String s = ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
-                MessageBox.Show(s); 
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("update_Borrowed_Information", db.getConnection);
+                    cmd.Parameters.Add("@Borrowed_Information_ID", SqlDbType.VarChar, 100).Value =
+                        ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
+                    cmd.Parameters.Add("@Librarian_ID", SqlDbType.VarChar, 100).Value = Globals.idUser;
+                    cmd.Parameters.Add("@Option", SqlDbType.Int, 100).Value = 1;
+
+                    db.openConnection();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    CreateMuon();
+                    db.closeConnection();
+                }
+                catch (SqlException exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    db.closeConnection();
+                }
             }
         }
-
         private void btn_Denbu_click(object sender, EventArgs e)
         {
             Panel a = ((sender as Guna2Button).Parent as Panel);
-            string money = a.Controls[0].Text;
+            string money = a.Controls[2].Text;
             if ((MessageBox.Show("Da thanh toan so tien " + money, "Error book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                String s = ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
-                MessageBox.Show(s);
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("update_Borrowed_Information", db.getConnection);
+                    cmd.Parameters.Add("@Borrowed_Information_ID", SqlDbType.VarChar, 100).Value =
+                        ((sender as Guna2Button).Parent as Panel).Controls[0].Text;
+                    cmd.Parameters.Add("@Librarian_ID", SqlDbType.VarChar, 100).Value = Globals.idUser;
+                    cmd.Parameters.Add("@Option", SqlDbType.Int, 100).Value = 2;
+                    db.openConnection();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    CreateLoi();
+                    db.closeConnection();
+                }
+                catch (SqlException exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    db.closeConnection();
+                }
+
             }
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
+            //CreateTra();
             CreateMuon();        
         }
     }

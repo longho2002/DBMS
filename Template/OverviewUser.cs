@@ -15,5 +15,10 @@ namespace Template
             UpdatePass a = new UpdatePass();
             a.ShowDialog(this);
         }
+
+        private void OverviewUser_Load(object sender, EventArgs e)
+        {
+            gunaCircleProgressBar1.Value = 26;
+        }
     }
 }

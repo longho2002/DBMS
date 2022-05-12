@@ -50,6 +50,7 @@
             this.btn_can.TabIndex = 191;
             this.btn_can.Text = "Xóa";
             this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
             // 
             // btn_add
             // 
@@ -59,6 +60,7 @@
             this.btn_add.TabIndex = 190;
             this.btn_add.Text = "Cập nhật";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // dateTimePicker1
             // 
@@ -165,7 +167,7 @@
             this.label1.TabIndex = 200;
             this.label1.Text = "Thông tin tác giả";
             // 
-            // EditLoc
+            // EditAuthor
             // 
             this.ClientSize = new System.Drawing.Size(455, 363);
             this.Controls.Add(this.dateTimePicker1);
@@ -180,8 +182,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_can);
             this.Controls.Add(this.btn_add);
-            this.Name = "EditLoc";
+            this.Name = "EditAuthor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.EditAuthor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

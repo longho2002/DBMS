@@ -150,7 +150,7 @@ namespace Template
             foreach (DataRow item in dt.Rows)
             {
                 Byte[] data = new Byte[0];
-                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
+                data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes(Application.StartupPath + "\\Resources\\" + "book.jpg") : (Byte[])(item["picture"]);
                 MemoryStream mem = new MemoryStream(data);
                 panMain.Controls.Add(Loi(item["Borrowed_Information_ID"].ToString(), item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], item["Price"].ToString(), Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
                 i++;
@@ -824,6 +824,29 @@ namespace Template
         {
             //CreateTra();
             CreateMuon();        
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            if (option == 0)
+            {
+                CreateMuon();
+            }
+            else if (option == 1)
+            {
+                CreateTra();
+            }
+            else if (option == 2)
+            {
+                CreateLoi();
+            }else if (option == 3)
+            {
+                CreateQuaHan();
+            }
+            else
+            {
+                CreateDenbu();
+            }
         }
     }
 }

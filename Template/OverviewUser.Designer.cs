@@ -33,15 +33,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_update = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lb_name = new System.Windows.Forms.Label();
+            this.lb_date = new System.Windows.Forms.Label();
+            this.lb_gender = new System.Windows.Forms.Label();
+            this.lb_phone = new System.Windows.Forms.Label();
+            this.lb_adrs = new System.Windows.Forms.Label();
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_total = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,89 +94,61 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(556, 260);
+            this.label2.Location = new System.Drawing.Point(597, 260);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 88;
-            this.label2.Text = "First Name:";
+            this.label2.Text = "Name:";
             // 
-            // btn_update
+            // lb_name
             // 
-            this.btn_update.Animated = true;
-            this.btn_update.BackColor = System.Drawing.Color.Transparent;
-            this.btn_update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.btn_update.BorderRadius = 10;
-            this.btn_update.BorderThickness = 1;
-            this.btn_update.CheckedState.Parent = this.btn_update;
-            this.btn_update.CustomImages.Parent = this.btn_update;
-            this.btn_update.FillColor = System.Drawing.Color.White;
-            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btn_update.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btn_update.HoverState.Parent = this.btn_update;
-            this.btn_update.Location = new System.Drawing.Point(597, 504);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.ShadowDecoration.Parent = this.btn_update;
-            this.btn_update.Size = new System.Drawing.Size(145, 43);
-            this.btn_update.TabIndex = 131;
-            this.btn_update.Text = "Cập nhật mật khẩu";
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            this.lb_name.AutoSize = true;
+            this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_name.ForeColor = System.Drawing.Color.Black;
+            this.lb_name.Location = new System.Drawing.Point(686, 260);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(0, 16);
+            this.lb_name.TabIndex = 132;
             // 
-            // label1
+            // lb_date
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(686, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 132;
-            this.label1.Text = "Trung";
+            this.lb_date.AutoSize = true;
+            this.lb_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_date.ForeColor = System.Drawing.Color.Black;
+            this.lb_date.Location = new System.Drawing.Point(686, 304);
+            this.lb_date.Name = "lb_date";
+            this.lb_date.Size = new System.Drawing.Size(0, 16);
+            this.lb_date.TabIndex = 133;
             // 
-            // label3
+            // lb_gender
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(686, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
-            this.label3.TabIndex = 133;
-            this.label3.Text = "25/07/02";
+            this.lb_gender.AutoSize = true;
+            this.lb_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_gender.ForeColor = System.Drawing.Color.Black;
+            this.lb_gender.Location = new System.Drawing.Point(686, 344);
+            this.lb_gender.Name = "lb_gender";
+            this.lb_gender.Size = new System.Drawing.Size(0, 16);
+            this.lb_gender.TabIndex = 134;
             // 
-            // label9
+            // lb_phone
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(686, 344);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 20);
-            this.label9.TabIndex = 134;
-            this.label9.Text = "Nữ";
+            this.lb_phone.AutoSize = true;
+            this.lb_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_phone.ForeColor = System.Drawing.Color.Black;
+            this.lb_phone.Location = new System.Drawing.Point(686, 388);
+            this.lb_phone.Name = "lb_phone";
+            this.lb_phone.Size = new System.Drawing.Size(0, 16);
+            this.lb_phone.TabIndex = 135;
             // 
-            // label10
+            // lb_adrs
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(686, 388);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 20);
-            this.label10.TabIndex = 135;
-            this.label10.Text = "113";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(686, 436);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 20);
-            this.label11.TabIndex = 136;
-            this.label11.Text = "Khánh Hòa";
+            this.lb_adrs.AutoSize = true;
+            this.lb_adrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_adrs.ForeColor = System.Drawing.Color.Black;
+            this.lb_adrs.Location = new System.Drawing.Point(686, 436);
+            this.lb_adrs.Name = "lb_adrs";
+            this.lb_adrs.Size = new System.Drawing.Size(0, 16);
+            this.lb_adrs.TabIndex = 136;
             // 
             // gunaCircleProgressBar1
             // 
@@ -216,19 +188,30 @@
             this.guna2HtmlLabel4.TabIndex = 2;
             this.guna2HtmlLabel4.Text = "Thông tin khách hàng";
             // 
+            // lb_total
+            // 
+            this.lb_total.AutoSize = true;
+            this.lb_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_total.ForeColor = System.Drawing.Color.Black;
+            this.lb_total.Location = new System.Drawing.Point(80, 527);
+            this.lb_total.Name = "lb_total";
+            this.lb_total.Size = new System.Drawing.Size(80, 20);
+            this.lb_total.TabIndex = 139;
+            this.lb_total.Text = "Address:";
+            // 
             // OverviewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 640);
+            this.Controls.Add(this.lb_total);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.gunaCircleProgressBar1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_update);
+            this.Controls.Add(this.lb_adrs);
+            this.Controls.Add(this.lb_phone);
+            this.Controls.Add(this.lb_gender);
+            this.Controls.Add(this.lb_date);
+            this.Controls.Add(this.lb_name);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -252,14 +235,14 @@
         protected System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.Label label2;
-        internal Guna.UI2.WinForms.Guna2Button btn_update;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.Label label10;
-        protected System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.Label lb_name;
+        protected System.Windows.Forms.Label lb_date;
+        protected System.Windows.Forms.Label lb_gender;
+        protected System.Windows.Forms.Label lb_phone;
+        protected System.Windows.Forms.Label lb_adrs;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        protected System.Windows.Forms.Label lb_total;
     }
 }

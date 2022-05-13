@@ -41,9 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,8 +49,6 @@
             // DataGridView1
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Empty;
             this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView1.BackgroundColor = System.Drawing.Color.White;
@@ -160,10 +156,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.Guna2TextBox1);
+            this.panel2.Controls.Add(this.tb_search);
             this.panel2.Location = new System.Drawing.Point(75, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(874, 109);
@@ -184,68 +178,40 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(333, 35);
+            this.guna2Button1.Location = new System.Drawing.Point(559, 38);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(87, 39);
             this.guna2Button1.TabIndex = 117;
             this.guna2Button1.Text = "Search";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // Guna2TextBox1
+            // tb_search
             // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 20;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.FocusedState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.HoverState.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Location = new System.Drawing.Point(32, 35);
-            this.Guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "Search Books";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.ShadowDecoration.Parent = this.Guna2TextBox1;
-            this.Guna2TextBox1.Size = new System.Drawing.Size(295, 39);
-            this.Guna2TextBox1.TabIndex = 118;
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(677, 41);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.TabIndex = 120;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(572, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 24);
-            this.label2.TabIndex = 121;
-            this.label2.Text = "Trạng thái:";
+            this.tb_search.Animated = true;
+            this.tb_search.BorderRadius = 20;
+            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_search.DefaultText = "";
+            this.tb_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.DisabledState.Parent = this.tb_search;
+            this.tb_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.tb_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.FocusedState.Parent = this.tb_search;
+            this.tb_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_search.HoverState.Parent = this.tb_search;
+            this.tb_search.Location = new System.Drawing.Point(258, 38);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.PasswordChar = '\0';
+            this.tb_search.PlaceholderText = "Search Books";
+            this.tb_search.SelectedText = "";
+            this.tb_search.ShadowDecoration.Parent = this.tb_search;
+            this.tb_search.Size = new System.Drawing.Size(295, 39);
+            this.tb_search.TabIndex = 118;
             // 
             // DashBoard_Cus
             // 
@@ -261,7 +227,6 @@
             this.Load += new System.EventHandler(this.DashBoard_Cus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,9 +243,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         internal Guna.UI2.WinForms.Guna2Button guna2Button1;
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
+        internal Guna.UI2.WinForms.Guna2TextBox tb_search;
     }
 }

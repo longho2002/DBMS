@@ -69,9 +69,8 @@ namespace Template
             if (dt.Rows.Count > 0)
             {
                 this.DialogResult = DialogResult.OK;
-                Globals.SetUser(dt.Rows[0][0].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][1].ToString());
+                Globals.SetUser(dt.Rows[0][0].ToString(), dt.Rows[0][2].ToString() == "cus" ? "customer" : dt.Rows[0][2].ToString(), dt.Rows[0][1].ToString());
                 this.Close();
-
             }
 
         }

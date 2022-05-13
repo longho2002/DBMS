@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Template
@@ -14,14 +9,12 @@ namespace Template
     public partial class UserInfo : Form
     {
         MY_DB  db = new MY_DB();
-        public static bool flag = false;
+        public bool flag = false;
 
         public UserInfo()
         {
             InitializeComponent();
         }
-
-       
 
         private void UserInfo_Load(object sender, EventArgs e)
         {
@@ -44,8 +37,8 @@ namespace Template
             //select* from Librarian where Librarian_ID = 'AD-004'
             foreach (DataRow item in dt.Rows)
             {
-                tb_Name.Text = item[1].ToString();
-                tb_Address.Text = item["Adress"].ToString();
+                tb_Name.Text = flag == false ?  item["usersname"].ToString() : item["Librarian_Name"].ToString();
+                tb_Address.Text = item["Address"].ToString();
                 tb_Phone.Text = item["Phone_Number"].ToString();
                 if (item["Gender"].ToString() == "True")
                 {
@@ -56,8 +49,9 @@ namespace Template
                     radioButtonFemale.Checked = true;
                 }
                 rjCircularPictureBox1.Image = flag == true
-                    ? Image.FromFile(Application.StartupPath + "\\Resources\\" + "icon-password-3.jpg")
-                    : Image.FromFile(Application.StartupPath + "\\Resources\\" + "icon-password-3.jpg");
+                    ? Image.FromFile(Application.StartupPath + "\\Resources\\" + "user.jpg")
+                    : Image.FromFile(Application.StartupPath + "\\Resources\\" + "staff.jpg");
+                dateTimePicker1.Value = (DateTime) item["Date_of_Birth"];
 
             }
         }
@@ -66,7 +60,23 @@ namespace Template
         {
             try
             {
-                
+                SqlDataAdapter da = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand("update_InfPersonal_trans", db.getConnection);
+                cmd.Parameters.Add("@executor_id", SqlDbType.VarChar).Value = Globals.idUser;
+                cmd.Parameters.Add("@affected_id", SqlDbType.VarChar).Value = Globals.idUsertmp;
+                cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = tb_Name.Text;
+                cmd.Parameters.Add("@date_of_Birth", SqlDbType.Date).Value = dateTimePicker1.Value;
+                cmd.Parameters.Add("@gender", SqlDbType.Bit).Value = radioButtonMale.Checked == true ? 1 : 0;
+                cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = tb_Address.Text;
+                cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = tb_Phone.Text;
+
+                da.SelectCommand = cmd;
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                db.openConnection();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Success!");
+                db.closeConnection();
+                this.Close();
             }
             catch (SqlException exception)
             {
@@ -78,7 +88,17 @@ namespace Template
         {
             try
             {
-
+                SqlDataAdapter da = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand("delete_Account", db.getConnection);
+                cmd.Parameters.Add("@executor_id", SqlDbType.VarChar).Value = Globals.idUser;
+                cmd.Parameters.Add("@affected_id", SqlDbType.VarChar).Value = Globals.idUsertmp;
+                da.SelectCommand = cmd;
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                db.openConnection();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Success!");
+                db.closeConnection();
+                this.Close();
             }
             catch (SqlException exception)
             {

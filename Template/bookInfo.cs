@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,10 @@ namespace Template
                 tb_nxb.Text = dt.Rows[0]["Publishing_Company_Name"].ToString();
                 tb_price.Text = dt.Rows[0]["Price"].ToString();
                 date_publish.Value = (DateTime)dt.Rows[0]["Publication_Date"];
+                byte[] pic;
+                pic = dt.Rows[0]["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (byte[])dt.Rows[0]["picture"];
+                MemoryStream picture = new MemoryStream(pic);
+                pictureBox1.Image = Image.FromStream(picture);
             }
             catch (SqlException exception)
             {

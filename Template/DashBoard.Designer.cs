@@ -94,6 +94,7 @@
             this.tb_search.ShadowDecoration.Parent = this.tb_search;
             this.tb_search.Size = new System.Drawing.Size(447, 44);
             this.tb_search.TabIndex = 117;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
             // Guna2Button13
             // 

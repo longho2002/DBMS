@@ -33,7 +33,6 @@ namespace Template
                     MessageBox.Show("Not Found!");
                     this.Close();
                 }
-
                 lb_namebook.Text = dt.Rows[0]["Book_Name"].ToString();
                 lb_idbook.Text = dt.Rows[0]["Book_ID"].ToString();
                 lb_dateborrow.Text = DateTime.Now.ToString().Split(' ')[0];
@@ -100,7 +99,7 @@ namespace Template
                 lb_nameuser.Text = dt.Rows[0][1].ToString();
                 lb_dateofbirth.Text = dt.Rows[0][2].ToString().Split(' ')[0];
                 lb_iduser.Text = dt.Rows[0][0].ToString();
-                rjCircularPictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "icon-password-3.jpg");
+                rjCircularPictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "user.jpg");
             }
             catch (Exception exception)
             {

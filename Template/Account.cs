@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 
@@ -10,29 +11,49 @@ namespace Template
     public partial class Account : Form
     {
         private MY_DB db = new MY_DB();
+        private int option = 1;
         public Account()
         {
             InitializeComponent();
             panel1.BackColor = Color.DimGray;
-
+            fillPanel();
+            if (Globals.role != "admin")
+            {
+                btn_KH.Visible = false;
+                btn_NV.Visible = false;
+            }
             // pan_Acc.Location = new Point(21, 18);
             // pan_Acc.Size = new Size(170, 170);
-            SqlCommand cmd = new SqlCommand("Select", db.getConnection);
+
+        }
+        void fillPanel()
+        {
+            panel1.Controls.Clear();
+            SqlCommand cmd = new SqlCommand("Select * from dbo.AllUsers(@option, @search)", db.getConnection);
+            cmd.Parameters.Add("@option", SqlDbType.Int).Value = option;
+            cmd.Parameters.Add("@search", SqlDbType.NVarChar).Value = tb_search.Text.Trim();
             DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
             int x = 20, y = 20;
-            for (int i = 1; i <= 20; i++)
+            int i = 0;
+            byte[] pic;
+            MemoryStream picture;
+            pic = System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "user.jpg"));
+            picture = new MemoryStream(pic);
+
+            foreach (DataRow item in dt.Rows)
             {
-                panel1.Controls.Add(renderAcc(x + (i % 5) * (16 + 170), y, "1231", "Long", "Master"));
-                if (i % 5 == 0)
+                panel1.Controls.Add(renderAcc(x + i * (16 + 170), y, item["ID"].ToString(), item["Name"].ToString(), item["remembership"] == null ? "" : item["remembership"].ToString(), picture));
+                if (i == 4)
                 {
-                    x = 20;
                     y += 20 + 170;
+                    i = -1;
                 }
+                i++;
             }
         }
-
-        public Guna2GradientPanel renderAcc(int x, int y, string idUser, string name, string rank)
+        public Guna2GradientPanel renderAcc(int x, int y, string idUser, string name, string rank ,MemoryStream pic)
         {
             // 
             // lb_rank
@@ -48,15 +69,16 @@ namespace Template
             lb_rank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             lb_rank.AutoSize = false;
             lb_rank.TextAlign = ContentAlignment.MiddleCenter;
+          
             // 
             // lb_Name
             // 
             Label lb_Name = new Label();
             lb_Name.AutoSize = true;
             lb_Name.BackColor = Color.Transparent;
-            lb_Name.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            lb_Name.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             lb_Name.ForeColor = Color.DodgerBlue;
-            lb_Name.Location = new Point(55, 105);
+            lb_Name.Location = new Point(40, 105);
             lb_Name.Size = new Size(68, 24);
             lb_Name.Text = name;
 
@@ -75,6 +97,7 @@ namespace Template
             pictureBox.Size = new Size(84, 84);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.TabStop = false;
+            pictureBox.Image = Image.FromStream(pic);
 
             // 
             // pan_Acc
@@ -87,7 +110,10 @@ namespace Template
             Guna2GradientPanel pan_Acc = new Guna2GradientPanel();
             pan_Acc.BorderRadius = 20;
             pan_Acc.Controls.Add(id);
-            pan_Acc.Controls.Add(lb_rank);
+            if (rank != "")
+            {
+                pan_Acc.Controls.Add(lb_rank);
+            }
             pan_Acc.Controls.Add(lb_Name);
             pan_Acc.Controls.Add(pictureBox);
             pan_Acc.FillColor = Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(200)))), ((int)(((byte)(48)))));
@@ -110,32 +136,33 @@ namespace Template
         {
             UserInfo a = new UserInfo();
             a.FormBorderStyle = FormBorderStyle.Fixed3D;
+            
             Globals.setIDUsertmp((sender as Guna2GradientPanel).Controls[0].Text);
+            MessageBox.Show((sender as Guna2GradientPanel).Controls[0].Text);
             a.ShowDialog();
         }
 
-        private void pan_Acc_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pan_Acc_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             Register a = new Register();
             a.ShowDialog(this);
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            fillPanel();
+        }
+
+        private void gunaAdvenceButton2_Click(object sender, EventArgs e)
+        {
+            option = 1;
+            fillPanel();
+        }
+
+        private void gunaAdvenceButton3_Click(object sender, EventArgs e)
+        {
+            option = 2;
+            fillPanel();
         }
     }
 }

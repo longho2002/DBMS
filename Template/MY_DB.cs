@@ -6,7 +6,7 @@ namespace Template
     internal class MY_DB
     {
         private SqlConnection con =
-            new SqlConnection(@"Data Source=DESKTOP-PH7VFOH;Initial Catalog=QL_THU_VIEN_1243;Integrated Security =True;");
+            new SqlConnection(@"Data Source=DESKTOP-PH7VFOH;Initial Catalog=QL_THU_VIEN_20222;Integrated Security =True;");
 
         public SqlConnection getConnection
         {

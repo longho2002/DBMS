@@ -41,11 +41,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
+            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,27 +187,11 @@
             this.label1.Text = "Customer ID:";
             this.label1.Visible = false;
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(101, 143);
-            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(209, 209);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 81;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
             // btn_Edit
             // 
             this.btn_Edit.BackColor = System.Drawing.Color.Gray;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.Location = new System.Drawing.Point(285, 473);
+            this.btn_Edit.Location = new System.Drawing.Point(450, 473);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(148, 46);
             this.btn_Edit.TabIndex = 84;
@@ -219,7 +203,7 @@
             // 
             this.btn_Remove.BackColor = System.Drawing.Color.Red;
             this.btn_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Remove.Location = new System.Drawing.Point(464, 473);
+            this.btn_Remove.Location = new System.Drawing.Point(263, 473);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(148, 46);
             this.btn_Remove.TabIndex = 83;
@@ -252,13 +236,29 @@
             this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
             this.btn_update.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btn_update.HoverState.Parent = this.btn_update;
-            this.btn_update.Location = new System.Drawing.Point(601, 401);
+            this.btn_update.Location = new System.Drawing.Point(558, 404);
             this.btn_update.Name = "btn_update";
             this.btn_update.ShadowDecoration.Parent = this.btn_update;
-            this.btn_update.Size = new System.Drawing.Size(145, 43);
+            this.btn_update.Size = new System.Drawing.Size(220, 43);
             this.btn_update.TabIndex = 132;
             this.btn_update.Text = "Cập nhật mật khẩu";
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(101, 143);
+            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(209, 209);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 81;
+            this.rjCircularPictureBox1.TabStop = false;
             // 
             // UserInfo
             // 

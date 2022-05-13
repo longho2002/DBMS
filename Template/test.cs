@@ -32,30 +32,28 @@ namespace Template
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("select dbo.Check_Borrow_User(@users_ID, @num)", db.getConnection);
+            cmd.Parameters.Add("@users_ID", SqlDbType.VarChar).Value = Globals.idUsertmp;
+            cmd.Parameters.Add("@num", SqlDbType.Int).Value = pan_bookBorrow.Controls.Count;
+            db.openConnection();
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
             if (pan_bookBorrow.Controls.Count == 0 || Globals.idUser == "")
             {
                 MessageBox.Show("Empty user or book!!!!");
                 return;
             }
-            SqlCommand cmd = new SqlCommand("[usp_my_procedure_name]", db.getConnection);
+            if (result == 0)
+            {
+                MessageBox.Show("Muon qua so sach quy dinh!");
+                return;
+            }
             try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                //set breakpoint
-                db.openConnection();
-                cmd.ExecuteNonQuery();
                 cmd = new SqlCommand("insert_Borrowed_Information", db.getConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                db.openConnection();
                 foreach (Panel item in pan_bookBorrow.Controls)
                 {
                     cmd.Parameters.Clear();
-                    //@Borrowed_Date, @Payment_Appointment_Date, @users_ID, @Librarian_ID, @Book_ID
-                    //set breakpoint
-                    //cmd.Parameters.AddWithValue("@Borrowed_Date", DateTime.Now.ToString("yyyyMMdd"));
-                    //cmd.Parameters.AddWithValue("@Payment_Appointment_Date", (item.Controls[2] as DateTimePicker).Value.ToString("yyyyMMdd"));
-                    //cmd.Parameters.Add("@Borrowed_Date", SqlDbType.Date).Value = DateTime.Now;
-                    //cmd.Parameters.Add("@Payment_Appointment_Date", SqlDbType.Date).Value = (item.Controls[2] as DateTimePicker).Value;
                     cmd.Parameters.Add("@Borrowed_Date", SqlDbType.Date, 100).Value = DateTime.Now.Date;
                     cmd.Parameters.Add("@Payment_Appointment_Date", SqlDbType.Date, 100).Value =
                         (item.Controls[2] as DateTimePicker).Value.Date;
@@ -64,23 +62,24 @@ namespace Template
                     cmd.Parameters.Add("@Book_ID", SqlDbType.VarChar).Value = item.Controls[0].Text;
                     cmd.ExecuteNonQuery();
                 }
-
                 // commit
                 MessageBox.Show("Muon thanh cong~");
-                cmd = new SqlCommand("usp_my_procedure_name", db.getConnection);
+                cmd = new SqlCommand("rollbackBorrow", db.getConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand("rollbackBorrow", db.getConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 db.closeConnection();
                 pan_bookBorrow.Controls.Clear();
+                book_borrow.Controls.Clear();
+                GC.Collect();
+                GC.Collect();
+                GC.Collect();
             }
             catch (SqlException exception)
             {
                 MessageBox.Show(exception.Message);
-                //rollback
-                cmd = new SqlCommand("rollbackBorrow", db.getConnection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                db.openConnection();
-                cmd.ExecuteNonQuery();
                 db.closeConnection();
             }
         }
@@ -130,37 +129,6 @@ namespace Template
         //
         private void renderListbook()
         {
-            //string tmp = tb_searchBook.Text.Trim().Equals("") ? " " : tb_searchBook.Text.Trim();
-            //String cmd = "SELECT * FROM All_of_Book WHERE CONCAT(Book_ID, Book_Name) LIKE '%" +
-            //             tmp + "%' and Book_ID not in  (";
-            //if (book_borrow.Controls.Count == 0)
-            //{
-            //    cmd += "' ')";
-            //}
-            //else
-            //{
-            //    foreach (Panel item in book_borrow.Controls)
-            //    {
-            //        cmd += "'" + item.Controls[0].Text + "',";
-            //    }
-            //    cmd += ")";
-            //    cmd = cmd.Remove(cmd.Length - 2, 1);
-            //}
-
-            //SqlCommand command = new SqlCommand(cmd, db.getConnection);
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //adapter.Fill(dt);
-            //pan_listBook.Controls.Clear();
-            //string s;
-            //int i = 0;
-            //foreach (DataRow item in dt.Rows)
-            //{
-            //    s = "";
-            //    s += item[1].ToString() + " (" + item["Author_Name"].ToString() + ")";
-            //    pan_listBook.Controls.Add(createBook(item[0].ToString(), s, 8, 17 + (17 + 15) * i));
-            //    i++;
-            //}
 
             string tmp = tb_searchBook.Text.Trim().Equals("") ? " " : tb_searchBook.Text.Trim();
             string list ="";

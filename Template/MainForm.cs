@@ -20,7 +20,19 @@ namespace Template
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Globals.SetUser("AD-004", "admin", "Cozark");
+            //Globals.SetUser("U-002", "customer", "Cozark");
+            //Globals.SetUser("AD-004", "admin", "Cozark");
+            if (Globals.role == "admin")
+            {
+                picture.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "admin.jpg");
+            }
+            else if (Globals.role == "staff")
+                picture.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "staff.jpg");
+            else
+            {
+                picture.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "user.jpg");
+
+            }
             lb_name.Text = "Welcome Back (" + Globals.nameUser + ")";
             lb_role.Text = Globals.role;
             if (Globals.role.Equals("customer"))

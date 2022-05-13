@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_oldpass = new System.Windows.Forms.TextBox();
+            this.tb_pass = new System.Windows.Forms.TextBox();
+            this.tb_repass = new System.Windows.Forms.TextBox();
             this.btn_update = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
@@ -79,29 +79,32 @@
             this.label3.TabIndex = 90;
             this.label3.Text = "Nhập lại mật khẩu:";
             // 
-            // textBox1
+            // tb_oldpass
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(228, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 29);
-            this.textBox1.TabIndex = 91;
+            this.tb_oldpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_oldpass.Location = new System.Drawing.Point(228, 86);
+            this.tb_oldpass.Name = "tb_oldpass";
+            this.tb_oldpass.Size = new System.Drawing.Size(271, 29);
+            this.tb_oldpass.TabIndex = 91;
+            this.tb_oldpass.UseSystemPasswordChar = true;
             // 
-            // textBox2
+            // tb_pass
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(228, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 29);
-            this.textBox2.TabIndex = 92;
+            this.tb_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_pass.Location = new System.Drawing.Point(228, 128);
+            this.tb_pass.Name = "tb_pass";
+            this.tb_pass.Size = new System.Drawing.Size(271, 29);
+            this.tb_pass.TabIndex = 92;
+            this.tb_pass.UseSystemPasswordChar = true;
             // 
-            // textBox3
+            // tb_repass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(228, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 29);
-            this.textBox3.TabIndex = 93;
+            this.tb_repass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_repass.Location = new System.Drawing.Point(228, 171);
+            this.tb_repass.Name = "tb_repass";
+            this.tb_repass.Size = new System.Drawing.Size(271, 29);
+            this.tb_repass.TabIndex = 93;
+            this.tb_repass.UseSystemPasswordChar = true;
             // 
             // btn_update
             // 
@@ -118,7 +121,7 @@
             this.btn_update.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
             this.btn_update.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btn_update.HoverState.Parent = this.btn_update;
-            this.btn_update.Location = new System.Drawing.Point(385, 226);
+            this.btn_update.Location = new System.Drawing.Point(363, 226);
             this.btn_update.Name = "btn_update";
             this.btn_update.ShadowDecoration.Parent = this.btn_update;
             this.btn_update.Size = new System.Drawing.Size(145, 43);
@@ -141,7 +144,7 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(177, 226);
+            this.guna2Button1.Location = new System.Drawing.Point(147, 226);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(145, 43);
@@ -153,12 +156,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 281);
+            this.ClientSize = new System.Drawing.Size(651, 281);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_repass);
+            this.Controls.Add(this.tb_pass);
+            this.Controls.Add(this.tb_oldpass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -177,9 +180,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_oldpass;
+        private System.Windows.Forms.TextBox tb_pass;
+        private System.Windows.Forms.TextBox tb_repass;
         internal Guna.UI2.WinForms.Guna2Button btn_update;
         internal Guna.UI2.WinForms.Guna2Button guna2Button1;
     }

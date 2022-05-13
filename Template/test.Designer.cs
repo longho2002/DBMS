@@ -132,9 +132,8 @@
             this.lb_gender.Location = new System.Drawing.Point(359, 169);
             this.lb_gender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_gender.Name = "lb_gender";
-            this.lb_gender.Size = new System.Drawing.Size(35, 24);
+            this.lb_gender.Size = new System.Drawing.Size(0, 19);
             this.lb_gender.TabIndex = 9;
-            this.lb_gender.Text = "Nữ";
             // 
             // lb_country
             // 
@@ -143,9 +142,8 @@
             this.lb_country.Location = new System.Drawing.Point(359, 130);
             this.lb_country.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_country.Name = "lb_country";
-            this.lb_country.Size = new System.Drawing.Size(105, 24);
+            this.lb_country.Size = new System.Drawing.Size(0, 19);
             this.lb_country.TabIndex = 8;
-            this.lb_country.Text = "Khánh Hòa";
             // 
             // lb_date
             // 
@@ -154,9 +152,8 @@
             this.lb_date.Location = new System.Drawing.Point(359, 91);
             this.lb_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_date.Name = "lb_date";
-            this.lb_date.Size = new System.Drawing.Size(90, 24);
+            this.lb_date.Size = new System.Drawing.Size(0, 19);
             this.lb_date.TabIndex = 7;
-            this.lb_date.Text = "25/7/1999";
             // 
             // lb_name
             // 
@@ -165,9 +162,8 @@
             this.lb_name.Location = new System.Drawing.Point(359, 55);
             this.lb_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(61, 24);
+            this.lb_name.Size = new System.Drawing.Size(0, 19);
             this.lb_name.TabIndex = 6;
-            this.lb_name.Text = "Trung";
             // 
             // label5
             // 
@@ -342,9 +338,9 @@
             // pan_bookDetail
             // 
             this.pan_bookDetail.Controls.Add(this.label8);
-            this.pan_bookDetail.Location = new System.Drawing.Point(8, 17);
+            this.pan_bookDetail.Location = new System.Drawing.Point(40959, 40959);
             this.pan_bookDetail.Name = "pan_bookDetail";
-            this.pan_bookDetail.Size = new System.Drawing.Size(442, 44);
+            this.pan_bookDetail.Size = new System.Drawing.Size(81919, 81919);
             this.pan_bookDetail.TabIndex = 0;
             this.pan_bookDetail.Visible = false;
             // 

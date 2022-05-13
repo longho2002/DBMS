@@ -45,13 +45,13 @@
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lb_role = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lb_name = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Pan_Infor = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Pan_Menu.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // Pan_Menu
@@ -260,7 +260,7 @@
             this.guna2Panel2.Controls.Add(this.gunaAdvenceButton1);
             this.guna2Panel2.Controls.Add(this.lb_role);
             this.guna2Panel2.Controls.Add(this.lb_name);
-            this.guna2Panel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.guna2Panel2.Controls.Add(this.picture);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(205, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -313,23 +313,23 @@
             // lb_name
             // 
             this.lb_name.BackColor = System.Drawing.Color.Transparent;
-            this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_name.Location = new System.Drawing.Point(816, 27);
+            this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_name.Location = new System.Drawing.Point(816, 21);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(59, 22);
+            this.lb_name.Size = new System.Drawing.Size(51, 18);
             this.lb_name.TabIndex = 1;
             this.lb_name.Text = "Cozark";
             // 
-            // guna2CirclePictureBox1
+            // picture
             // 
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(727, 12);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(83, 77);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.picture.Location = new System.Drawing.Point(727, 12);
+            this.picture.Name = "picture";
+            this.picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picture.ShadowDecoration.Parent = this.picture;
+            this.picture.Size = new System.Drawing.Size(83, 77);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture.TabIndex = 0;
+            this.picture.TabStop = false;
             // 
             // Pan_Infor
             // 
@@ -364,7 +364,7 @@
             this.Pan_Menu.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,7 +383,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_role;
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_name;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox picture;
         private Guna.UI2.WinForms.Guna2Panel Pan_Infor;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;

@@ -32,16 +32,17 @@ namespace Template
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select dbo.Check_Borrow_User(@users_ID, @num)", db.getConnection);
-            cmd.Parameters.Add("@users_ID", SqlDbType.VarChar).Value = Globals.idUsertmp;
-            cmd.Parameters.Add("@num", SqlDbType.Int).Value = pan_bookBorrow.Controls.Count;
-            db.openConnection();
-            int result = Convert.ToInt32(cmd.ExecuteScalar());
             if (pan_bookBorrow.Controls.Count == 0 || Globals.idUser == "")
             {
                 MessageBox.Show("Empty user or book!!!!");
                 return;
             }
+            SqlCommand cmd = new SqlCommand("select dbo.Check_Borrow_User(@users_ID, @num)", db.getConnection);
+            cmd.Parameters.Add("@users_ID", SqlDbType.VarChar).Value = Globals.idUsertmp;
+            cmd.Parameters.Add("@num", SqlDbType.Int).Value = pan_bookBorrow.Controls.Count;
+            db.openConnection();
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+           
             if (result == 0)
             {
                 MessageBox.Show("Muon qua so sach quy dinh!");
@@ -64,12 +65,6 @@ namespace Template
                 }
                 // commit
                 MessageBox.Show("Muon thanh cong~");
-                cmd = new SqlCommand("rollbackBorrow", db.getConnection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
-                cmd = new SqlCommand("rollbackBorrow", db.getConnection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
                 db.closeConnection();
                 pan_bookBorrow.Controls.Clear();
                 book_borrow.Controls.Clear();

@@ -25,15 +25,6 @@ namespace Template
 
         }
 
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
@@ -45,16 +36,6 @@ namespace Template
 
         }
 
-        private void guna2HtmlLabel7_Click(object sender, EventArgs e)
-        {
-            Register a = new Register();
-            a.ShowDialog();
-        }
-
-        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
@@ -72,7 +53,17 @@ namespace Template
                 Globals.SetUser(dt.Rows[0][0].ToString(), dt.Rows[0][2].ToString() == "cus" ? "customer" : dt.Rows[0][2].ToString(), dt.Rows[0][1].ToString());
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Wrong password or user id");
+            }
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Register a = new Register();
+            a.ShowDialog();
         }
     }
 

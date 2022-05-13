@@ -136,9 +136,7 @@ namespace Template
         {
             UserInfo a = new UserInfo();
             a.FormBorderStyle = FormBorderStyle.Fixed3D;
-            
             Globals.setIDUsertmp((sender as Guna2GradientPanel).Controls[0].Text);
-            MessageBox.Show((sender as Guna2GradientPanel).Controls[0].Text);
             a.ShowDialog();
         }
 

@@ -20,7 +20,8 @@ namespace Template
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //Globals.SetUser("U-002", "customer", "Cozark");
+            Globals.SetUser("U-002", "customer", "Cozark");
+            //this.ClientSize = new System.Drawing.Size(1223, 800);
             //Globals.SetUser("AD-004", "admin", "Cozark");
             if (Globals.role == "admin")
             {
@@ -34,7 +35,7 @@ namespace Template
 
             }
             lb_name.Text = "Welcome Back (" + Globals.nameUser + ")";
-            lb_role.Text = Globals.role;
+            lb_role.Text = Globals.role.ToUpper();
             if (Globals.role.Equals("customer"))
             {
                 OverviewUser aa = new OverviewUser() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -55,6 +56,9 @@ namespace Template
             GC.Collect();
             GC.Collect();
             GC.Collect();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             Pan_Infor.Controls.Clear();
             toggleButton_Click(sender as Guna2Button);
             book a = new book() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -67,6 +71,9 @@ namespace Template
 
         private void btn_Acccount_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             GC.Collect();
             GC.Collect();
             GC.Collect();
@@ -89,6 +96,9 @@ namespace Template
 
         private void btn_Overview_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             GC.Collect();
             GC.Collect();
             GC.Collect();
@@ -142,6 +152,9 @@ namespace Template
             GC.Collect();
             GC.Collect();
             GC.Collect();
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             Pan_Infor.Controls.Clear();
             toggleButton_Click((sender as Guna2Button));
             guna2ShadowForm1.SetShadowForm(this);
@@ -155,6 +168,9 @@ namespace Template
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             GC.Collect();
             GC.Collect();
             GC.Collect();
@@ -177,6 +193,9 @@ namespace Template
 
         private void btn_Borrow_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.Collect();
+            GC.Collect();
             GC.Collect();
             GC.Collect();
             GC.Collect();

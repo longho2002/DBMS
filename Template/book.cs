@@ -133,7 +133,18 @@ namespace Template
             lb_ratting.Location = new Point(210, 102);
             lb_ratting.Size = new Size(37, 19);
             lb_ratting.Text = status;
-            lb_ratting.ForeColor = status == "unactive" ? Color.Red : Color.LawnGreen;
+            if (status == "unactive")
+            {
+                lb_ratting.ForeColor = Color.Yellow;
+            }
+            else if (status == "deleted")
+            {
+                lb_ratting.ForeColor = Color.Red;
+            }
+            else
+            {
+                lb_ratting.ForeColor = Color.LawnGreen;
+            }
             lb_ratting.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lb_name
@@ -268,7 +279,7 @@ namespace Template
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * from popular_N_news_books(@search, @choose, @Book_Category)", db.getConnection);
-                command.Parameters.Add("@search", SqlDbType.VarChar, 100).Value = tb_book.Text.Trim();
+                command.Parameters.Add("@search", SqlDbType.NVarChar, 100).Value = tb_book.Text.Trim();
                 command.Parameters.Add("@choose", SqlDbType.Int, 100).Value = option;
                 command.Parameters.Add("@Book_Category", SqlDbType.NVarChar, 100).Value = cat;
                 DataTable dt = new DataTable();

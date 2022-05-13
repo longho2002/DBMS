@@ -43,7 +43,7 @@ namespace Template
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 67);
+            this.panel1.Location = new System.Drawing.Point(29, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(962, 607);
             this.panel1.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace Template
             this.tb_search.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_search.HoverState.Parent = this.tb_search;
-            this.tb_search.Location = new System.Drawing.Point(12, 12);
+            this.tb_search.Location = new System.Drawing.Point(29, 12);
             this.tb_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_search.Name = "tb_search";
             this.tb_search.PasswordChar = '\0';
@@ -95,7 +95,7 @@ namespace Template
             this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(807, 16);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(824, 16);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray;
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -128,7 +128,7 @@ namespace Template
             this.btn_KH.Image = ((System.Drawing.Image)(resources.GetObject("btn_KH.Image")));
             this.btn_KH.ImageSize = new System.Drawing.Size(20, 20);
             this.btn_KH.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_KH.Location = new System.Drawing.Point(336, 23);
+            this.btn_KH.Location = new System.Drawing.Point(353, 23);
             this.btn_KH.Name = "btn_KH";
             this.btn_KH.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray;
             this.btn_KH.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -161,7 +161,7 @@ namespace Template
             this.btn_NV.Image = ((System.Drawing.Image)(resources.GetObject("btn_NV.Image")));
             this.btn_NV.ImageSize = new System.Drawing.Size(20, 20);
             this.btn_NV.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_NV.Location = new System.Drawing.Point(476, 23);
+            this.btn_NV.Location = new System.Drawing.Point(493, 23);
             this.btn_NV.Name = "btn_NV";
             this.btn_NV.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray;
             this.btn_NV.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -179,7 +179,7 @@ namespace Template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 686);
+            this.ClientSize = new System.Drawing.Size(1023, 696);
             this.Controls.Add(this.btn_NV);
             this.Controls.Add(this.btn_KH);
             this.Controls.Add(this.gunaAdvenceButton1);

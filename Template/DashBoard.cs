@@ -27,28 +27,24 @@ namespace Template
             option = 0;
             CreateMuon();
         }
-
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
             option = 1;
             CreateTra();
         }
-
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
             option = 2;
             CreateLoi();
         }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
             option = 3;
             CreateQuaHan();
         }
-
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             panMain.Controls.Clear();
@@ -75,8 +71,6 @@ namespace Template
                 db.closeConnection();
             }
         }
-
-
 
 
         private void CreateQuaHan()
@@ -124,7 +118,7 @@ namespace Template
                 Byte[] data = new Byte[0];
                 data = item["picture"].ToString() == "" ? System.IO.File.ReadAllBytes((Application.StartupPath + "\\Resources\\" + "book.jpg")) : (Byte[])(item["picture"]);
                 MemoryStream mem = new MemoryStream(data);
-                panMain.Controls.Add(Muon(item["Borrowed_Information_ID"].ToString(),  item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
+                panMain.Controls.Add(Muon(item["Borrowed_Information_ID"].ToString(), item["Book_Name"].ToString(), item["usersname"].ToString(), item["Borrowed_Date"].ToString().Split(' ')[0], Image.FromStream(mem), 45, 30 + 100 * i + 20 * i));
                 i++;
             }
 
@@ -217,7 +211,6 @@ namespace Template
                 Location = new Point(45, 30 + 100 * 10 + 20 * 10),
             });
         }
-
         private Panel QuaHan(string id, string nameU, string nameB, string dateBorrow, string dateQH, Image image, int x, int y)
         {
             Panel pan_quahan = new Panel();
@@ -227,7 +220,7 @@ namespace Template
             Label lb_quahan = new Label();
             lb_quahan.AutoSize = true;
             lb_quahan.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_quahan.Location = new Point(526, 53);
+            lb_quahan.Location = new Point(520, 53);
             lb_quahan.Size = new Size(70, 20);
             lb_quahan.Text = "Quá hạn";
             // 
@@ -236,7 +229,7 @@ namespace Template
             Label lb_ngaymuon = new Label();
             lb_ngaymuon.AutoSize = true;
             lb_ngaymuon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_ngaymuon.Location = new Point(526, 24);
+            lb_ngaymuon.Location = new Point(520, 24);
             lb_ngaymuon.Size = new Size(89, 20);
             lb_ngaymuon.Text = "Ngày mượn";
             // 
@@ -257,8 +250,9 @@ namespace Template
             lb_book.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
+
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: " + nameB;
+            lb_book.Text = "Book: " + (nameB.Length > 15 ?nameB.Remove(15, nameB.Length- 15)+"...." : nameB );
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -328,7 +322,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: " + nameB;
+            lb_book.Text = "Book: " + (nameB.Length > 15 ?nameB.Remove(15, nameB.Length- 15)+"...." : nameB); ;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lb_date_muon
@@ -425,7 +419,7 @@ namespace Template
             Label lb_ngaymuon = new Label();
             lb_ngaymuon.AutoSize = true;
             lb_ngaymuon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_ngaymuon.Location = new Point(404, 24);
+            lb_ngaymuon.Location = new Point(398, 24);
             lb_ngaymuon.Size = new Size(89, 20);
             lb_ngaymuon.Text = "Ngày mượn";
             // 
@@ -437,7 +431,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: " + nameB;
+            lb_book.Text = "Book: " + (nameB.Length > 15 ?nameB.Remove(15, nameB.Length- 15)+"...." : nameB); ;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -482,7 +476,7 @@ namespace Template
             Label lb_giatien = new Label();
             lb_giatien.AutoSize = true;
             lb_giatien.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_giatien.Location = new Point(404, 52);
+            lb_giatien.Location = new Point(398, 52);
             lb_giatien.Size = new Size(64, 20);
             lb_giatien.Text = "Giá tiền";
             // 
@@ -538,7 +532,7 @@ namespace Template
             Label lb_ngaytra = new Label();
             lb_ngaytra.AutoSize = true;
             lb_ngaytra.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_ngaytra.Location = new Point(535, 53);
+            lb_ngaytra.Location = new Point(520, 53);
             lb_ngaytra.Size = new Size(68, 20);
             lb_ngaytra.Text = "Ngày trả:";
             // 
@@ -547,7 +541,7 @@ namespace Template
             Label lb_ngaymuon = new Label();
             lb_ngaymuon.AutoSize = true;
             lb_ngaymuon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_ngaymuon.Location = new Point(535, 24);
+            lb_ngaymuon.Location = new Point(520, 24);
             lb_ngaymuon.Size = new Size(89, 20);
             lb_ngaymuon.Text = "Ngày mượn:";
             // 
@@ -568,7 +562,7 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: " + nameB;
+            lb_book.Text = "Book: " + (nameB.Length > 15 ?nameB.Remove(15, nameB.Length- 15)+"...." : nameB); ;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -663,7 +657,8 @@ namespace Template
             lb_book.ForeColor = SystemColors.ActiveCaptionText;
             lb_book.Location = new Point(110, 52);
             lb_book.Size = new Size(121, 19);
-            lb_book.Text = "Book: " + nameB;
+            //nameB.Remove(15, nameB.Length- 15)+"...."
+            lb_book.Text = "Book: " + (nameB.Length > 15 ?nameB.Remove(15, nameB.Length- 15)+"...." : nameB); ;
             lb_book.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
@@ -671,7 +666,7 @@ namespace Template
             Label lb_date = new Label();
             lb_date.AutoSize = true;
             lb_date.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            lb_date.Location = new Point(483, 24);
+            lb_date.Location = new Point(495, 24);
             lb_date.Size = new Size(80, 20);
             lb_date.Text = dateMuon;
             // 
@@ -711,7 +706,7 @@ namespace Template
             Label date_return = new Label();
             date_return.AutoSize = true;
             date_return.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            date_return.Location = new Point(483, 55);
+            date_return.Location = new Point(495, 55);
             date_return.Size = new Size(80, 20);
             date_return.Text = dateTra;
 
@@ -740,7 +735,6 @@ namespace Template
             pannel_denbu.Size = new Size(794, 100);
             return pannel_denbu;
         }
-
         private void btn_Tra_click(object sender, EventArgs e)
         {
             if ((MessageBox.Show("Confirm return book~", "return book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
@@ -819,13 +813,11 @@ namespace Template
 
             }
         }
-
         private void DashBoard_Load(object sender, EventArgs e)
         {
             //CreateTra();
-            CreateMuon();        
+            CreateMuon();
         }
-
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             if (option == 0)
@@ -839,7 +831,8 @@ namespace Template
             else if (option == 2)
             {
                 CreateLoi();
-            }else if (option == 3)
+            }
+            else if (option == 3)
             {
                 CreateQuaHan();
             }

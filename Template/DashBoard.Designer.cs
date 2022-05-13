@@ -85,7 +85,7 @@
             this.tb_search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_search.HoverState.Parent = this.tb_search;
-            this.tb_search.Location = new System.Drawing.Point(44, 3);
+            this.tb_search.Location = new System.Drawing.Point(82, 13);
             this.tb_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_search.Name = "tb_search";
             this.tb_search.PasswordChar = '\0';
@@ -109,7 +109,7 @@
             this.Guna2Button13.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.Guna2Button13.HoverState.ForeColor = System.Drawing.Color.White;
             this.Guna2Button13.HoverState.Parent = this.Guna2Button13;
-            this.Guna2Button13.Location = new System.Drawing.Point(44, 53);
+            this.Guna2Button13.Location = new System.Drawing.Point(82, 63);
             this.Guna2Button13.Name = "Guna2Button13";
             this.Guna2Button13.ShadowDecoration.Parent = this.Guna2Button13;
             this.Guna2Button13.Size = new System.Drawing.Size(89, 40);
@@ -130,7 +130,7 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(329, 53);
+            this.guna2Button1.Location = new System.Drawing.Point(367, 63);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(89, 40);
@@ -151,7 +151,7 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(234, 53);
+            this.guna2Button2.Location = new System.Drawing.Point(272, 63);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(89, 40);
@@ -172,7 +172,7 @@
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(139, 53);
+            this.guna2Button3.Location = new System.Drawing.Point(177, 63);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(89, 40);
@@ -193,7 +193,7 @@
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(424, 53);
+            this.guna2Button4.Location = new System.Drawing.Point(462, 63);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(89, 40);
@@ -207,7 +207,7 @@
             this.panMain.Controls.Add(this.pan_Offset);
             this.panMain.Controls.Add(this.pan_Return);
             this.panMain.Controls.Add(this.pan_Borrow);
-            this.panMain.Location = new System.Drawing.Point(44, 99);
+            this.panMain.Location = new System.Drawing.Point(82, 109);
             this.panMain.Name = "panMain";
             this.panMain.ShadowDecoration.Parent = this.panMain;
             this.panMain.Size = new System.Drawing.Size(890, 497);
@@ -521,7 +521,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 608);
+            this.ClientSize = new System.Drawing.Size(1023, 696);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.guna2Button3);

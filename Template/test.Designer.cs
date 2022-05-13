@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,12 +52,11 @@
             this.pan_bookDetail = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.rjCircularPictureBox1 = new Template.RJCircularPictureBox();
             this.pan_userInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.pan_Book.SuspendLayout();
             this.pan_listBook.SuspendLayout();
             this.pan_bookDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_searchUser
@@ -76,7 +76,7 @@
             this.tb_searchUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_searchUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_searchUser.HoverState.Parent = this.tb_searchUser;
-            this.tb_searchUser.Location = new System.Drawing.Point(271, 5);
+            this.tb_searchUser.Location = new System.Drawing.Point(307, 16);
             this.tb_searchUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_searchUser.Name = "tb_searchUser";
             this.tb_searchUser.PasswordChar = '\0';
@@ -94,7 +94,7 @@
             this.btn_searchuser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_searchuser.ForeColor = System.Drawing.Color.White;
             this.btn_searchuser.HoverState.Parent = this.btn_searchuser;
-            this.btn_searchuser.Location = new System.Drawing.Point(615, 5);
+            this.btn_searchuser.Location = new System.Drawing.Point(651, 16);
             this.btn_searchuser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_searchuser.Name = "btn_searchuser";
             this.btn_searchuser.ShadowDecoration.Parent = this.btn_searchuser;
@@ -118,7 +118,7 @@
             this.pan_userInfo.Controls.Add(this.label2);
             this.pan_userInfo.Controls.Add(this.rjCircularPictureBox1);
             this.pan_userInfo.Controls.Add(this.label1);
-            this.pan_userInfo.Location = new System.Drawing.Point(204, 61);
+            this.pan_userInfo.Location = new System.Drawing.Point(240, 72);
             this.pan_userInfo.Margin = new System.Windows.Forms.Padding(2);
             this.pan_userInfo.Name = "pan_userInfo";
             this.pan_userInfo.ShadowDecoration.Parent = this.pan_userInfo;
@@ -132,7 +132,7 @@
             this.lb_gender.Location = new System.Drawing.Point(359, 169);
             this.lb_gender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_gender.Name = "lb_gender";
-            this.lb_gender.Size = new System.Drawing.Size(0, 19);
+            this.lb_gender.Size = new System.Drawing.Size(0, 24);
             this.lb_gender.TabIndex = 9;
             // 
             // lb_country
@@ -142,7 +142,7 @@
             this.lb_country.Location = new System.Drawing.Point(359, 130);
             this.lb_country.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_country.Name = "lb_country";
-            this.lb_country.Size = new System.Drawing.Size(0, 19);
+            this.lb_country.Size = new System.Drawing.Size(0, 24);
             this.lb_country.TabIndex = 8;
             // 
             // lb_date
@@ -152,7 +152,7 @@
             this.lb_date.Location = new System.Drawing.Point(359, 91);
             this.lb_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_date.Name = "lb_date";
-            this.lb_date.Size = new System.Drawing.Size(0, 19);
+            this.lb_date.Size = new System.Drawing.Size(0, 24);
             this.lb_date.TabIndex = 7;
             // 
             // lb_name
@@ -162,7 +162,7 @@
             this.lb_name.Location = new System.Drawing.Point(359, 55);
             this.lb_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(0, 19);
+            this.lb_name.Size = new System.Drawing.Size(0, 24);
             this.lb_name.TabIndex = 6;
             // 
             // label5
@@ -209,6 +209,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên:";
             // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(27, 55);
+            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(136, 136);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 1;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -229,7 +245,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(719, 627);
+            this.guna2Button3.Location = new System.Drawing.Point(755, 638);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
@@ -246,7 +262,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(844, 627);
+            this.guna2Button2.Location = new System.Drawing.Point(880, 638);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
@@ -262,7 +278,7 @@
             this.pan_Book.Controls.Add(this.label6);
             this.pan_Book.Controls.Add(this.pan_bookBorrow);
             this.pan_Book.Controls.Add(this.pan_listBook);
-            this.pan_Book.Location = new System.Drawing.Point(12, 283);
+            this.pan_Book.Location = new System.Drawing.Point(48, 294);
             this.pan_Book.Name = "pan_Book";
             this.pan_Book.Size = new System.Drawing.Size(932, 335);
             this.pan_Book.TabIndex = 127;
@@ -338,9 +354,9 @@
             // pan_bookDetail
             // 
             this.pan_bookDetail.Controls.Add(this.label8);
-            this.pan_bookDetail.Location = new System.Drawing.Point(40959, 40959);
+            this.pan_bookDetail.Location = new System.Drawing.Point(32705, 32361);
             this.pan_bookDetail.Name = "pan_bookDetail";
-            this.pan_bookDetail.Size = new System.Drawing.Size(81919, 81919);
+            this.pan_bookDetail.Size = new System.Drawing.Size(65535, 65535);
             this.pan_bookDetail.TabIndex = 0;
             this.pan_bookDetail.Visible = false;
             // 
@@ -348,7 +364,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 15);
+            this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(210, 16);
@@ -364,7 +380,7 @@
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(794, 152);
+            this.guna2Button4.Location = new System.Drawing.Point(830, 163);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
@@ -373,27 +389,11 @@
             this.guna2Button4.Text = "Clear";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(27, 55);
-            this.rjCircularPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(136, 136);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 1;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
             // Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 687);
+            this.ClientSize = new System.Drawing.Size(1023, 696);
             this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.pan_Book);
             this.Controls.Add(this.guna2Button2);
@@ -407,12 +407,12 @@
             this.Load += new System.EventHandler(this.Borrow_Load);
             this.pan_userInfo.ResumeLayout(false);
             this.pan_userInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.pan_Book.ResumeLayout(false);
             this.pan_Book.PerformLayout();
             this.pan_listBook.ResumeLayout(false);
             this.pan_bookDetail.ResumeLayout(false);
             this.pan_bookDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -53,7 +53,7 @@ namespace Template
             lb_totalU.Text = dt1.Rows[0][0].ToString();
             lb_totalBook.Text = dt1.Rows[0][1].ToString();
             lb_issued.Text = dt1.Rows[0][2].ToString();
-            lb_allBorrow.Text = dt1.Rows[0][3].ToString();
+            lb_return.Text = dt1.Rows[0][3].ToString();
 
             int y = 56;
             DataTable dt2 = new DataTable();
@@ -249,18 +249,18 @@ namespace Template
             // 
             // guna2HtmlLabel9
             // 
-            Guna2HtmlLabel lb_name = new Guna2HtmlLabel();
+            Label lb_name = new Label();
             lb_name.BackColor = System.Drawing.Color.Transparent;
             lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             lb_name.Location = new System.Drawing.Point(23, 14);
             lb_name.Margin = new System.Windows.Forms.Padding(2);
-            lb_name.Size = new System.Drawing.Size(61, 26);
+            lb_name.Size = new System.Drawing.Size(100, 20);
             lb_name.Text = "ID: " + name;
             // 
             // guna2HtmlLabel13
             // 
-            Guna2HtmlLabel lb_num = new Guna2HtmlLabel();
+            Label lb_num = new Label();
             lb_num.BackColor = System.Drawing.Color.Transparent;
             lb_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb_num.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -271,13 +271,13 @@ namespace Template
             // 
             // guna2HtmlLabel12
             // 
-            Guna2HtmlLabel lb_total = new Guna2HtmlLabel();
+            Label lb_total = new Label();
             lb_total.BackColor = System.Drawing.Color.Transparent;
             lb_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lb_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            lb_total.Location = new System.Drawing.Point(181, 14);
+            lb_total.Location = new System.Drawing.Point(170, 14);
             lb_total.Margin = new System.Windows.Forms.Padding(2);
-            lb_total.Size = new System.Drawing.Size(49, 26);
+            lb_total.Size = new System.Drawing.Size(80, 26);
             lb_total.Text = "Total: ";
             // 
             // pan_acc
@@ -294,7 +294,6 @@ namespace Template
             pan_tmp.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             pan_tmp.Size = new System.Drawing.Size(281, 66);
             pan_tmp.TabIndex = 2;
-
             return pan_tmp;
         }
 

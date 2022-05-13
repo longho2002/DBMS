@@ -91,7 +91,7 @@ namespace Template
         private void cb_role_SelectedValueChanged(object sender, EventArgs e)
         {
             role = cb_role.SelectedItem.ToString();
-            role = role == "Customer" ? "cus" : cb_role.SelectedValue.ToString().ToLower();
+            role = role == "Customer" ? "cus" : cb_role.SelectedItem.ToString().ToLower();
         }
     }
 }

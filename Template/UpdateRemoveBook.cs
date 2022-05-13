@@ -109,7 +109,7 @@ namespace Template
                             break;
                         }
                     }
-                    
+
                     cb_pos.SelectedValue = idPos = dt.Rows[0]["Position"].ToString();
                     cb_author.SelectedText = dt.Rows[0]["Author_Name"].ToString();
                     cb_nxb.SelectedText = dt.Rows[0]["Publishing_Company_Name"].ToString();
@@ -188,7 +188,7 @@ namespace Template
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 MemoryStream pic = new MemoryStream();
@@ -240,7 +240,7 @@ namespace Template
             {
                 MessageBox.Show(exception.Message);
             }
-           
+
         }
 
         private void btn_chooseIMG_Click(object sender, EventArgs e)

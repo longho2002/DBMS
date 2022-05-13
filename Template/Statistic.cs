@@ -28,7 +28,7 @@ namespace Template
         public Statistic()
         {
             InitializeComponent();
-           
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -40,12 +40,12 @@ namespace Template
             string command1;
             DataTable dt = new DataTable();
             DataTable dt1 = new DataTable();
-            SqlCommand cmd; 
+            SqlCommand cmd;
             SqlDataAdapter adapter = new SqlDataAdapter();
             if (option == 1 || option == 2)
             {
                 command = "select * from dbo.Statistic_Borrow_By_Weeks(@date)";
-                cmd  = new SqlCommand(command, db.getConnection);
+                cmd = new SqlCommand(command, db.getConnection);
                 cmd.Parameters.Add("@date", SqlDbType.Date).Value = dateTimePicker1.Value;
                 adapter.SelectCommand = cmd;
                 adapter.Fill(dt);
@@ -241,10 +241,36 @@ namespace Template
         {
             LoadPanTop3(1, DateTime.Now);
             loadTopBook();
+            pic1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "top1.jpg");
+            pic2.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "top2.jpg");
+            pic3.Image = Image.FromFile(Application.StartupPath + "\\Resources\\" + "top3.jpg");
+
+            string command1;
+            string command2;
+            command1 = "select * from dbo.Statistic_Borrow_By_Weeks(@date)";
+            command2 = "select * from dbo.Statistic_Paid_By_Weeks(@date)";
+
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(command1, db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = dateTimePicker1.Value;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            DataTable dt1 = new DataTable();
+            cmd = new SqlCommand(command2, db.getConnection);
+            cmd.Parameters.Add("@date", SqlDbType.Date).Value = dateTimePicker1.Value;
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dt1);
+            InitChart_ReBo(dt, dt1);
         }
 
         private void LoadPanTop3(int option, DateTime date)
         {
+            lb_book1.Text = "";
+            lb_book3.Text = "";
+            lb_book_2.Text = "";
+            lb_name1.Text = "";
+            lb_name2.Text = "";
+            lb_name3.Text = "";
             SqlCommand cmd = new SqlCommand("Select * from dbo.getTop_Account(@date, @option)", db.getConnection);
             cmd.Parameters.Add("@date", SqlDbType.Date).Value = date.Date;
             cmd.Parameters.Add("@option", SqlDbType.Int).Value = option;
@@ -356,7 +382,7 @@ namespace Template
 
         private void loadTopBook()
         {
-            SqlCommand cmd = new SqlCommand("Select * from dbo.getTop_Book(@date, @option)",db.getConnection);
+            SqlCommand cmd = new SqlCommand("Select * from dbo.getTop_Book(@date, @option)", db.getConnection);
             DataTable dt = new DataTable();
             cmd.Parameters.Add("@date", SqlDbType.Date).Value = DateTime.Now;
             cmd.Parameters.Add("@option", SqlDbType.Int).Value = 3;
@@ -367,11 +393,11 @@ namespace Template
                 pieChart1.Series.Add(new PieSeries()
                 {
                     Title = item[1].ToString(),
-                    Values = new ChartValues<double> { Convert.ToDouble(item[2].ToString()) } ,
+                    Values = new ChartValues<double> { Convert.ToDouble(item[2].ToString()) },
                     DataLabels = true,
                 });
-                pieChart1.LegendLocation = LegendLocation.Right;
-               
+                pieChart1.LegendLocation = LegendLocation.Bottom;
+
             }
         }
     }
